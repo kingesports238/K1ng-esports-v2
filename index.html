@@ -1,0 +1,363 @@
+🎮 K1NG ESPORTS — GitHub-Ready Website
+
+Perfectly matches your blue/silver crown logo + "ONE NAME. ONE CROWN." theme. Ready to push to GitHub Pages — clean, fast, responsive, no extra setup needed.
+📁 GitHub File Structure
+k1ng-esports/
+├── index.html
+├── README.md
+└── assets/
+    └── banner.jpg   (save your logo image here)
+🚀 1. Complete index.html (Copy & Paste)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K1NG ESPORTS | ONE NAME. ONE CROWN.</title>
+    <!-- GitHub-friendly: no external dependencies -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        :root {
+            --black: #050508;
+            --dark: #0f111a;
+            --blue: #00ccff;
+            --silver: #e0e5eb;
+            --silver-dark: #8892a0;
+            --glow: rgba(0, 204, 255, 0.5);
+        }
+
+        body {
+            background: var(--black);
+            color: var(--silver);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5,5,8,0.95);
+            border-bottom: 1px solid rgba(0,204,255,0.15);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--silver);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .logo span { color: var(--blue); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--silver);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--blue); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            padding-top: 80px;
+            background: linear-gradient(180deg, rgba(5,5,8,0.85), rgba(15,17,26,0.95)),
+                        url('assets/banner.jpg') center/cover no-repeat;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 12vw, 7rem);
+            font-weight: 900;
+            color: var(--silver);
+            text-shadow: 0 0 40px var(--glow);
+            margin-bottom: 0.5rem;
+            letter-spacing: 6px;
+        }
+        .hero h1 span { color: var(--blue); }
+
+        .hero .slogan {
+            font-size: 1.2rem;
+            color: var(--blue);
+            letter-spacing: 4px;
+            margin-bottom: 0.3rem;
+        }
+        .hero .sub-slogan {
+            font-size: 1.5rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            letter-spacing: 2px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .btn-primary {
+            background: var(--blue);
+            color: #000;
+            box-shadow: 0 0 20px var(--glow);
+        }
+        .btn-primary:hover { transform: translateY(-3px); }
+        .btn-outline {
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            background: transparent;
+        }
+        .btn-outline:hover { background: var(--blue); color: #000; }
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--silver);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--blue);
+            margin: 0.8rem auto 0;
+            box-shadow: 0 0 10px var(--glow);
+        }
+
+        /* About */
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* Teams */
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .team-card {
+            background: var(--dark);
+            border: 1px solid rgba(0,204,255,0.2);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .team-card:hover {
+            border-color: var(--blue);
+            box-shadow: 0 0 25px var(--glow);
+            transform: translateY(-5px);
+        }
+        .team-card h3 {
+            color: var(--blue);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(0,204,255,0.15);
+        }
+        footer p { color: var(--silver-dark); }
+        footer a { color: var(--blue); text-decoration: none; }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { letter-spacing: 2px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="#" class="logo">K<span>1</span>NG</a>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <p class="slogan">ONE NAME. ONE CROWN.</p>
+    <h1>K<span>1</span>NG</h1>
+    <p class="sub-slogan">WE ARE K1NG.</p>
+    <div class="btn-group">
+        <a href="#teams" class="btn btn-primary">VIEW ROSTER</a>
+        <a href="#contact" class="btn btn-outline">JOIN US</a>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about">
+    <h2 class="section-title">ABOUT K1NG</h2>
+    <div class="about-content">
+        <p>K1NG ESPORTS was built on one simple rule: <strong>Excellence Reigns.</strong> We are more than a team — we are a legacy in the making. From competitive dominance to community pride, every match, every play, every win carries the crown.</p>
+        <br>
+        <p><em>One Name. One Crown. We Are K1NG.</em></p>
+    </div>
+</section>
+
+<!-- Teams -->
+<section id="teams">
+    <h2 class="section-title">OUR TEAMS</h2>
+    <div class="teams-grid">
+        <div class="team-card">
+            <h3>🎮 VALORANT</h3>
+            <p>Competitive roster — rising through the ranks.</p>
+        </div>
+        <div class="team-card">
+            <h3>⚔️ CS2</h3>
+            <p>Tactical precision, unmatched teamwork.</p>
+        </div>
+        <div class="team-card">
+            <h3>🏆 LEAGUE</h3>
+            <p>Climbing the ladder, claiming the throne.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Sponsors -->
+<section id="sponsors">
+    <h2 class="section-title">PARTNERS & SPONSORS</h2>
+    <div style="text-align:center; color:#ccc;">
+        <p>Interested in partnering with K1NG?<br>
+        <a href="#contact" style="color:#00ccff;">Contact us →</a></p>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2 class="section-title">CONTACT</h2>
+    <div style="text-align:center; font-size:1.1rem; color:#ccc;">
+        <p>📧 Email: <a href="mailto:contact@k1ngesports.com" style="color:#00ccff;">contact@k1ngesports.com</a></p>
+        <p>🐦 Twitter / X: <a href="#" style="color:#00ccff;">@K1NGesports</a></p>
+        <p>💬 Discord: <a href="#" style="color:#00ccff;">Join our server</a></p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 K1NG ESPORTS. All Rights Reserved.</p>
+    <p style="margin-top:0.5rem; font-size:0.9rem;">ONE NAME. ONE CROWN.</p>
+</footer>
+
+</body>
+</html>
+📄 2. README.md (For GitHub Repo)
+# 👑 K1NG ESPORTS — Official Website
+
+> **ONE NAME. ONE CROWN. WE ARE K1NG.**
+
+Official website for K1NG ESPORTS — a competitive esports organization.
+
+## 🚀 Live Site
+Hosted with GitHub Pages:  
+👉 **https://your-username.github.io/k1ng-esports/**
+
+## 🎨 Features
+- ✅ Branded design — Blue, Silver & Black theme
+- ✅ Fully responsive — Mobile, Tablet & Desktop
+- ✅ Fast, lightweight — No frameworks, pure HTML/CSS
+- ✅ Sections: Home, About, Teams, Sponsors, Contact
+- ✅ GitHub Pages ready — 1-click deploy
+
+## 🛠️ Setup
+1. Clone the repo
+2. Replace `assets/banner.jpg` with your K1NG logo/banner
+3. Update contact links & socials in `index.html`
+4. Push to GitHub
+5. Enable GitHub Pages in repo settings → Deploy from main branch
+
+## 📁 Structure
+k1ng-esports/
+├── index.html
+├── README.md
+└── assets/
+└── banner.jpg
+---
+*Built for the crown. 👑*
+🚀 How to Deploy to GitHub (5 Steps)
+
+1. Create a new repo → Name it k1ng-esports
+
+2. Upload files:
+
+◦ index.html
+
+◦ README.md
+
+◦ Folder assets/ → Put your K1NG banner/logo there as banner.jpg
+
+3. Go to Settings → Pages (left sidebar)
+
+4. Source: Deploy from a branch → Select main → Save
+
+5. Wait 1–2 minutes → Your site goes live at:
+https://your-username.github.io/k1ng-esports/
+✨ Customization Tips
+
+• Change colors: Edit the :root section in CSS
+
+• Add games: Duplicate the .team-card block
+
+• Update banner: Replace assets/banner.jpg with your image
+
+• Social links: Replace # with your actual URLs
+
+Want me to add a live match ticker, player profiles, or dark/light mode toggle next?
