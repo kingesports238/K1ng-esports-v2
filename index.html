@@ -4,393 +4,1288 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>K1NG ESPORTS | ONE NAME. ONE CROWN.</title>
-<!-- Fonts -->
+<meta name="description" content="K1NG ESPORTS — Elite competitive esports organization. One Name. One Crown.">
+<!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== RESET & BASE ===== */
+/* ============================================
+   K1NG ESPORTS — PRODUCTION CSS
+   ============================================ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --black:#050508;--void:#0A0A0F;--steel:#12121f;
-  --primary:#00ccff;--secondary:#a855f7;--accent:#f0399f;
-  --silver:#e0e5eb;--muted:#7a7a8c;--border:rgba(0,204,255,0.18);
-  --ok:#3ecf4f;--open:#e0793d;
-  --glow-primary:rgba(0,204,255,0.5);--glow-soft:rgba(0,204,255,0.12);
-  --gradient-brand:linear-gradient(135deg,#00ccff 0%,#a855f7 50%,#f0399f 100%);
-  --shadow-glow:0 0 30px rgba(0,204,255,0.35);
+  /* BRAND PALETTE — MATCHES YOUR LOGO */
+  --black:#030306;--void:#07070D;--steel:#0F1424;--steel-2:#161D35;
+  --primary:#00BFFF;--primary-2:#0099CC;--silver:#E6F1FF;--muted:#8A94B0;
+  --accent:#00FFE5;--gold:#FFD700;--danger:#FF3860;--success:#00E676;
+  --border:rgba(0,191,255,0.2);--glow:rgba(0,191,255,0.5);--glow-soft:rgba(0,191,255,0.12);
+  --grad-brand:linear-gradient(135deg,#00BFFF 0%,#0077FF 50%,#7B2FFE 100%);
+  --grad-silver:linear-gradient(135deg,#FFFFFF 0%,#B0C4DE 100%);
+  --shadow-glow:0 0 40px rgba(0,191,255,0.35);
+  --shadow-card:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(0,191,255,0.1);
 }
-html,body{background:var(--black);color:var(--silver);font-family:'Rajdhani',sans-serif;overflow-x:hidden;scroll-behavior:smooth;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);color:var(--silver);font-family:'Rajdhani',sans-serif;
+  line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  cursor:none;
+}
 ::selection{background:var(--primary);color:var(--black);}
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--void)}
-::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--primary),var(--secondary));border-radius:3px}
-a{color:inherit;text-decoration:none;transition:color .2s;}
-button{font-family:inherit;cursor:pointer;border:none;background:none;}
-:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}
-
-/* ===== UTILITIES ===== */
-.container{width:92%;max-width:1200px;margin:0 auto;}
-.section-padding{padding:clamp(3.5rem,8vw,6rem) 0;}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--void);}
+::-webkit-scrollbar-thumb{background:var(--grad-brand);border-radius:4px;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;border:none;background:none;cursor:pointer;color:inherit;}
+img{max-width:100%;display:block;}
+.container{width:92%;max-width:1280px;margin:0 auto;}
+.section{padding:clamp(4rem,10vw,7rem) 0;position:relative;}
+.section-dark{background:var(--void);}
+.tag{
+  font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--primary);
+  display:inline-block;margin-bottom:.8rem;position:relative;padding-left:1.5rem;
+}
+.tag::before{
+  content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:1rem;height:2px;background:var(--grad-brand);
+}
+.heading{
+  font-family:'Orbitron',sans-serif;font-weight:900;
+  font-size:clamp(2rem,5.5vw,3.5rem);line-height:1.1;margin-bottom:1rem;
+  letter-spacing:-.02em;
+}
+.heading-gradient{
+  background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;
+  color:transparent;
+}
+.subheading{font-size:1.1rem;color:var(--muted);max-width:620px;line-height:1.7;}
 .text-center{text-align:center;}
-.tag{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--primary);display:inline-block;margin-bottom:.8rem;}
-.heading{font-family:'Orbitron',sans-serif;font-weight:800;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2;margin-bottom:1rem;}
-.subheading{font-size:1.05rem;color:var(--muted);max-width:600px;line-height:1.7;}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 2rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;font-size:.85rem;transition:all .3s ease;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);}
-.btn-primary{background:var(--gradient-brand);color:#000;box-shadow:var(--shadow-glow);}
-.btn-primary:hover{transform:translateY(-3px);filter:brightness(1.1);}
-.btn-outline{border:1px solid var(--border);color:var(--silver);}
-.btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px);}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
-.card{background:var(--void);border:1px solid var(--border);border-radius:6px;padding:2rem;transition:all .3s ease;position:relative;overflow:hidden;}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient-brand);opacity:0;transition:opacity .3s;}
-.card:hover{border-color:var(--primary);transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.4),0 0 0 1px var(--glow-soft);}
-.card:hover::before{opacity:1;}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.in-view{opacity:1;transform:translateY(0);}
+.text-center .subheading{margin:0 auto;}
 
-/* ===== NAVIGATION ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 4%;height:70px;background:rgba(5,5,8,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-.logo{display:flex;align-items:center;gap:.6rem;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.3rem;color:var(--primary);letter-spacing:.1em;}
-.logo svg{width:24px;height:24px;filter:drop-shadow(0 0 6px var(--glow-primary));}
+/* ============================================
+   PRELOADER
+   ============================================ */
+.preloader{
+  position:fixed;inset:0;background:var(--black);z-index:9999;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  transition:opacity .6s ease,visibility .6s ease;
+}
+.preloader.hidden{opacity:0;visibility:hidden;}
+.preloader-crown{
+  width:100px;height:auto;margin-bottom:1.5rem;
+  animation:crownPulse 1.8s ease-in-out infinite;
+  filter:drop-shadow(0 0 20px var(--glow));
+}
+@keyframes crownPulse{
+  0%,100%{transform:scale(1);opacity:.8;}
+  50%{transform:scale(1.1);opacity:1;}
+}
+.loader-bar{
+  width:200px;height:3px;background:var(--steel);border-radius:2px;overflow:hidden;
+}
+.loader-fill{
+  height:100%;width:0;background:var(--grad-brand);
+  animation:loaderFill 1.8s ease forwards;
+  box-shadow:0 0 10px var(--glow);
+}
+@keyframes loaderFill{to{width:100%;}}
+.preloader-text{
+  font-family:'Orbitron',sans-serif;font-weight:700;font-size:.8rem;
+  letter-spacing:.4em;color:var(--primary);margin-top:1rem;
+  text-transform:uppercase;
+}
+
+/* ============================================
+   CUSTOM CURSOR (DESKTOP ONLY)
+   ============================================ */
+.cursor,.cursor-dot{
+  position:fixed;top:0;left:0;pointer-events:none;z-index:9998;
+  border-radius:50%;transform:translate(-50%,-50%);
+  transition:transform .15s ease,width .2s ease,height .2s ease,background .2s ease;
+}
+.cursor{
+  width:36px;height:36px;border:1.5px solid var(--primary);
+  mix-blend-mode:difference;
+}
+.cursor-dot{width:4px;height:4px;background:var(--primary);}
+.cursor.hover{width:60px;height:60px;background:rgba(0,191,255,0.1);border-color:var(--accent);}
+@media(hover:none){.cursor,.cursor-dot{display:none;}body{cursor:auto;}}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:0 4%;height:72px;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(3,3,6,0.7);backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;transition:all .3s ease;
+}
+.nav.scrolled{
+  height:64px;border-bottom-color:var(--border);
+  background:rgba(3,3,6,0.9);
+}
+.logo{
+  display:flex;align-items:center;gap:.6rem;
+  font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.4rem;
+  color:var(--silver);letter-spacing:.15em;transition:all .3s;
+}
+.logo:hover{color:var(--primary);}
+.logo svg{width:28px;height:28px;filter:drop-shadow(0 0 8px var(--glow));}
+.logo span{color:var(--primary);}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
-.nav-links a{font-weight:600;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:.5rem 0;border-bottom:2px solid transparent;}
-.nav-links a:hover,.nav-links a.active{color:var(--primary);border-bottom-color:var(--primary);}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem;}
-.hamburger span{width:26px;height:2px;background:var(--primary);border-radius:2px;transition:all .3s;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-links a{
+  position:relative;font-weight:600;font-size:.9rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);padding:.5rem 0;transition:color .2s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+  background:var(--grad-brand);transition:width .3s ease;
+  box-shadow:0 0 8px var(--glow);
+}
+.nav-links a:hover,.nav-links a.active{color:var(--silver);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-cta{
+  padding:.7rem 1.5rem;font-family:'Orbitron',sans-serif;font-weight:700;
+  font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+  background:var(--grad-brand);color:#000;border-radius:2px;
+  transition:all .3s ease;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-glow);}
+.hamburger{
+  display:none;flex-direction:column;gap:6px;padding:.5rem;z-index:1001;
+}
+.hamburger span{
+  width:28px;height:2px;background:var(--primary);border-radius:2px;
+  transition:all .3s ease;
+}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{position:fixed;top:70px;left:0;right:0;background:var(--void);border-bottom:1px solid var(--border);transform:translateY(-100%);opacity:0;transition:all .3s ease;z-index:999;}
-.mobile-menu.open{transform:translateY(0);opacity:1;}
-.mobile-menu a{display:block;padding:1.2rem 4%;border-bottom:1px solid rgba(0,204,255,.1);color:var(--silver);font-weight:600;text-transform:uppercase;letter-spacing:.1em;}
-.mobile-menu a:hover{color:var(--primary);padding-left:6%;}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+.mobile-menu{
+  position:fixed;top:0;right:0;bottom:0;width:80%;max-width:360px;
+  background:var(--void);border-left:1px solid var(--border);
+  z-index:1000;padding:6rem 2rem 2rem;
+  transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.175,1);
+}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu a{
+  display:block;padding:1.2rem 0;border-bottom:1px solid rgba(0,191,255,0.1);
+  font-family:'Orbitron',sans-serif;font-weight:700;font-size:1rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--silver);
+  transition:all .2s;
+}
+.mobile-menu a:hover{color:var(--primary);padding-left:.5rem;}
+.mobile-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);
+  z-index:999;opacity:0;visibility:hidden;transition:all .3s;
+}
+.mobile-overlay.open{opacity:1;visibility:visible;}
 
-/* ===== HERO ===== */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,8,.8) 0%,rgba(10,10,15,.9) 100%),url('ChatGPT_Image_Aug_12_2026_09_31_54_PM.png') center/cover no-repeat;z-index:-2;}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 40%,transparent 100%);animation:gridPan 20s linear infinite;z-index:-1;}
-@keyframes gridPan{to{background-position:80px 80px,80px 80px;}}
-.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,var(--glow-soft) 0%,transparent 65%);top:45%;left:50%;transform:translate(-50%,-50%);animation:glowPulse 6s ease-in-out infinite;z-index:-1;}
-@keyframes glowPulse{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1);}50%{opacity:.9;transform:translate(-50%,-50%) scale(1.1);}}
-.crown-icon{width:clamp(90px,15vw,140px);height:auto;margin-bottom:1.5rem;filter:drop-shadow(0 0 20px var(--glow-primary));animation:crownDrop 1s cubic-bezier(.22,1,.36,1) both;}
-@keyframes crownDrop{from{opacity:0;transform:translateY(-40px) scale(.8);}to{opacity:1;transform:translateY(0) scale(1);}}
-.hero h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(3rem,10vw,7rem);line-height:1;letter-spacing:.05em;margin-bottom:1rem;}
-.hero h1 span{background:var(--gradient-brand);-webkit-background-clip:text;background-clip:text;color:transparent;animation:brandShift 5s ease-in-out infinite;background-size:200% 200%;}
-@keyframes brandShift{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
-.hero-slogan{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--primary);letter-spacing:.3em;text-transform:uppercase;margin-bottom:.5rem;}
-.hero-sub{font-size:clamp(1rem,2.5vw,1.2rem);color:var(--muted);max-width:550px;margin-bottom:2.5rem;}
-.hero-buttons{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;}
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:-3;
+  background:
+    linear-gradient(180deg,rgba(3,3,6,0.75) 0%,rgba(7,7,13,0.9) 100%),
+    url('ChatGPT_Image_Aug_12_2026_09_31_54_PM.png') center/cover no-repeat;
+  transform:scale(1.1);animation:parallaxZoom 20s ease-in-out infinite alternate;
+}
+@keyframes parallaxZoom{
+  from{transform:scale(1.1) translate(0,0);}
+  to{transform:scale(1.15) translate(-2%,-1%);}
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:-2;
+  background-image:
+    linear-gradient(rgba(0,191,255,0.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,191,255,0.06) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 45%,#000 30%,transparent 100%);
+  animation:gridMove 25s linear infinite;
+}
+@keyframes gridMove{to{background-position:60px 60px,60px 60px;}}
+.hero-glow{
+  position:absolute;width:700px;height:700px;z-index:-1;
+  background:radial-gradient(circle,var(--glow-soft) 0%,transparent 65%);
+  top:45%;left:50%;transform:translate(-50%,-50%);
+  animation:glowBreathe 6s ease-in-out infinite;
+}
+@keyframes glowBreathe{
+  0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1);}
+  50%{opacity:1;transform:translate(-50%,-50%) scale(1.15);}
+}
+.particles{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+.particle{
+  position:absolute;width:3px;height:3px;border-radius:50%;background:var(--primary);
+  box-shadow:0 0 8px var(--glow);opacity:0;
+  animation:particleFloat linear infinite;
+}
+@keyframes particleFloat{
+  0%{transform:translateY(100vh) translateX(0);opacity:0;}
+  10%{opacity:.8;}
+  90%{opacity:.6;}
+  100%{transform:translateY(-10vh) translateX(var(--drift,30px));opacity:0;}
+}
+.hero-crown{
+  width:clamp(100px,16vw,160px);height:auto;margin-bottom:2rem;
+  filter:drop-shadow(0 0 30px var(--glow));
+  animation:crownFloat 3s ease-in-out infinite, crownReveal 1.2s ease-out .2s both;
+}
+@keyframes crownFloat{
+  0%,100%{transform:translateY(0) rotate(0);}
+  50%{transform:translateY(-12px) rotate(1deg);}
+}
+@keyframes crownReveal{
+  from{opacity:0;transform:translateY(-60px) scale(.7);}
+  to{opacity:1;transform:translateY(0) scale(1);}
+}
+.hero-slogan{
+  font-family:'Orbitron',sans-serif;font-weight:700;
+  font-size:clamp(.9rem,2.5vw,1.2rem);letter-spacing:.4em;
+  text-transform:uppercase;color:var(--primary);margin-bottom:1rem;
+  animation:fadeUp .8s ease-out .5s both;
+}
+.hero h1{
+  font-family:'Orbitron',sans-serif;font-weight:900;
+  font-size:clamp(3rem,12vw,8rem);line-height:.95;letter-spacing:.05em;
+  margin-bottom:1rem;animation:fadeUp .8s ease-out .6s both;
+}
+.hero h1 .k1ng{
+  display:inline-block;background:var(--grad-silver);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 60px rgba(255,255,255,0.2);
+  position:relative;
+}
+.hero h1 .esports{
+  display:block;background:var(--grad-brand);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 20px var(--glow));
+}
+.typewriter{
+  font-size:clamp(1rem,2.5vw,1.3rem);color:var(--muted);
+  margin-bottom:2.5rem;min-height:1.8em;
+  animation:fadeUp .8s ease-out .8s both;
+}
+.typewriter .caret{
+  display:inline-block;width:2px;height:1.2em;background:var(--primary);
+  margin-left:.2rem;vertical-align:middle;animation:blink 1s infinite;
+}
+@keyframes blink{50%{opacity:0;}}
+.hero-btns{
+  display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;
+  animation:fadeUp .8s ease-out 1s both;
+}
+.btn{
+  position:relative;display:inline-flex;align-items:center;gap:.6rem;
+  padding:1rem 2.2rem;font-family:'Orbitron',sans-serif;font-weight:700;
+  font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;
+  transition:all .35s cubic-bezier(.22,1,.36,1);overflow:hidden;
+  clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);
+}
+.btn::before{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  transition:left .6s ease;
+}
+.btn:hover::before{left:100%;}
+.btn-primary{
+  background:var(--grad-brand);color:#000;box-shadow:var(--shadow-glow);
+}
+.btn-primary:hover{transform:translateY(-4px) scale(1.02);filter:brightness(1.15);}
+.btn-outline{
+  border:1.5px solid var(--primary);color:var(--primary);background:transparent;
+}
+.btn-outline:hover{
+  background:var(--primary);color:#000;transform:translateY(-4px);
+  box-shadow:var(--shadow-glow);
+}
+.scroll-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:var(--muted);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  animation:fadeUp 1s ease-out 1.5s both;
+}
+.scroll-mouse{
+  width:24px;height:40px;border:1.5px solid var(--primary);border-radius:12px;
+  position:relative;
+}
+.scroll-wheel{
+  position:absolute;top:8px;left:50%;transform:translateX(-50%);
+  width:3px;height:8px;background:var(--primary);border-radius:2px;
+  animation:scrollWheel 1.8s ease-in-out infinite;
+}
+@keyframes scrollWheel{
+  0%{transform:translate(-50%,0);opacity:1;}
+  100%{transform:translate(-50%,16px);opacity:0;}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
 
-/* ===== MARQUEE ===== */
-.marquee{background:var(--gradient-brand);padding:.7rem 0;overflow:hidden;}
-.marquee-track{display:flex;gap:4rem;animation:marquee 25s linear infinite;white-space:nowrap;}
-.marquee span{font-family:'Orbitron',sans-serif;font-weight:700;font-size:.85rem;color:#000;letter-spacing:.2em;text-transform:uppercase;}
-@keyframes marquee{to{transform:translateX(-50%);}}
+/* ============================================
+   MARQUEE
+   ============================================ */
+.marquee{
+  background:var(--grad-brand);padding:.8rem 0;overflow:hidden;
+  position:relative;z-index:1;
+}
+.marquee-track{
+  display:flex;gap:5rem;white-space:nowrap;
+  animation:marqueeScroll 30s linear infinite;
+}
+.marquee span{
+  font-family:'Orbitron',sans-serif;font-weight:800;font-size:.9rem;
+  color:#000;letter-spacing:.25em;text-transform:uppercase;
+  display:flex;align-items:center;gap:1rem;
+}
+@keyframes marqueeScroll{to{transform:translateX(-50%);}}
 
-/* ===== ABOUT ===== */
-.about-content{max-width:700px;margin:0 auto;text-align:center;font-size:1.1rem;line-height:1.8;color:#ccc;}
-.about-content p + p{margin-top:1.2rem;}
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.reveal{opacity:0;transition:all .9s cubic-bezier(.22,1,.36,1);}
+.reveal-left{transform:translateX(-50px);}
+.reveal-right{transform:translateX(50px);}
+.reveal-up{transform:translateY(50px);}
+.reveal.in-view{opacity:1;transform:translate(0);}
 
-/* ===== TEAM ===== */
-.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;}
-.team-member{text-align:center;}
-.member-avatar{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.5rem;background:var(--gradient-brand);color:#000;box-shadow:var(--shadow-glow);}
-.member-role{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--primary);margin-bottom:.3rem;}
-.member-name{font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.1rem;}
-.open-slot{border:2px dashed var(--border);background:transparent;}
-.open-slot .member-avatar{background:transparent;border:2px dashed var(--open);color:var(--open);box-shadow:none;}
-.open-slot .member-role{color:var(--open);}
-.pulse-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--open);margin-right:.5rem;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+  margin-top:3rem;
+}
+.about-stats{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;
+}
+.stat-card{
+  background:var(--steel);border:1px solid var(--border);padding:2rem;
+  border-radius:4px;position:relative;overflow:hidden;transition:all .4s ease;
+}
+.stat-card::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:2px;
+  background:var(--grad-brand);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s ease;
+}
+.stat-card:hover{
+  transform:translateY(-6px);border-color:var(--primary);
+  box-shadow:var(--shadow-card);
+}
+.stat-card:hover::before{transform:scaleX(1);}
+.stat-num{
+  font-family:'Orbitron',sans-serif;font-weight:900;
+  font-size:clamp(2rem,5vw,3rem);line-height:1;
+  background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;
+  color:transparent;
+}
+.stat-label{
+  font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-top:.5rem;
+}
 
-/* ===== STATUS ===== */
-.status-bar{height:10px;background:var(--steel);border-radius:5px;overflow:hidden;margin-top:.8rem;}
-.status-fill{height:100%;background:var(--gradient-brand);border-radius:5px;width:0;transition:width 1.5s cubic-bezier(.16,1,.3,1);}
-.status-item{margin-bottom:2rem;}
-.status-top{display:flex;justify-content:space-between;align-items:center;}
-.status-percent{font-family:'Orbitron',sans-serif;font-weight:700;color:var(--primary);font-size:1.2rem;}
+/* ============================================
+   ROSTER SECTION
+   ============================================ */
+.roster-filters{
+  display:flex;gap:.8rem;justify-content:center;margin:3rem 0 2rem;flex-wrap:wrap;
+}
+.filter-btn{
+  padding:.7rem 1.5rem;font-family:'Orbitron',sans-serif;font-weight:700;
+  font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid var(--border);color:var(--muted);border-radius:2px;
+  transition:all .3s ease;
+}
+.filter-btn:hover,.filter-btn.active{
+  background:var(--grad-brand);color:#000;border-color:transparent;
+  box-shadow:var(--shadow-glow);
+}
+.roster-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:1.5rem;perspective:1000px;
+}
+.player-card{
+  background:var(--steel);border:1px solid var(--border);border-radius:4px;
+  padding:2rem 1.5rem;text-align:center;position:relative;overflow:hidden;
+  transition:all .5s cubic-bezier(.22,1,.36,1);
+  transform-style:preserve-3d;opacity:1;
+}
+.player-card.hidden{display:none;}
+.player-card::before{
+  content:'';position:absolute;inset:0;background:var(--grad-brand);
+  opacity:0;transition:opacity .3s;z-index:0;
+}
+.player-card:hover{
+  transform:translateY(-10px) rotateX(5deg);border-color:var(--primary);
+  box-shadow:var(--shadow-card),0 30px 60px rgba(0,191,255,0.15);
+}
+.player-card:hover::before{opacity:.08;}
+.player-card > *{position:relative;z-index:1;}
+.player-avatar{
+  width:80px;height:80px;border-radius:50%;margin:0 auto 1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.8rem;
+  background:var(--grad-brand);color:#000;
+  box-shadow:var(--shadow-glow),inset 0 0 20px rgba(255,255,255,0.2);
+  position:relative;transition:transform .4s ease;
+}
+.player-card:hover .player-avatar{transform:scale(1.1);}
+.player-avatar::after{
+  content:'';position:absolute;inset:-4px;border-radius:50%;
+  border:1px dashed var(--primary);opacity:.5;
+  animation:spin 10s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+.player-role{
+  display:inline-block;padding:.25rem .8rem;font-size:.65rem;
+  letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+  border-radius:20px;margin-bottom:.8rem;
+}
+.role-owner{background:rgba(255,215,0,0.15);color:var(--gold);border:1px solid rgba(255,215,0,0.3);}
+.role-player{background:rgba(0,191,255,0.15);color:var(--primary);border:1px solid var(--border);}
+.role-open{background:rgba(224,121,61,0.15);color:#E0793D;border:1px dashed rgba(224,121,61,0.4);}
+.player-name{
+  font-family:'Orbitron',sans-serif;font-weight:800;font-size:1.2rem;
+  margin-bottom:.3rem;
+}
+.player-tag{font-size:.85rem;color:var(--muted);}
+.open-card{background:transparent;border-style:dashed;}
+.open-card .player-avatar{
+  background:transparent;border:2px dashed #E0793D;color:#E0793D;
+  box-shadow:none;
+}
+.pulse-dot{
+  display:inline-block;width:8px;height:8px;border-radius:50%;
+  background:#E0793D;margin-right:.4rem;animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(224,121,61,0.7);}
+  50%{opacity:.7;transform:scale(1.1);box-shadow:0 0 0 10px rgba(224,121,61,0);}
+}
 
-/* ===== CONTACT ===== */
-.contact-links{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:2rem;}
-.contact-link{display:flex;align-items:center;gap:.8rem;padding:1rem 2rem;border:1px solid var(--border);border-radius:4px;transition:all .3s;width:100%;max-width:400px;justify-content:center;}
-.contact-link:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px);}
+/* ============================================
+   ACHIEVEMENTS
+   ============================================ */
+.achievement-list{margin-top:3rem;max-width:800px;margin-left:auto;margin-right:auto;}
+.achievement{
+  display:flex;gap:2rem;padding:2rem;background:var(--steel);
+  border:1px solid var(--border);border-radius:4px;margin-bottom:1.5rem;
+  position:relative;overflow:hidden;transition:all .4s ease;
+}
+.achievement:hover{
+  transform:translateX(10px);border-color:var(--primary);
+  box-shadow:var(--shadow-card);
+}
+.achievement::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--grad-brand);transform:scaleY(0);transform-origin:bottom;
+  transition:transform .4s ease;
+}
+.achievement:hover::before{transform:scaleY(1);}
+.trophy{
+  font-size:2.5rem;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(255,215,0,0.5));
+}
+.achievement-info h3{
+  font-family:'Orbitron',sans-serif;font-size:1.2rem;margin-bottom:.3rem;
+}
+.achievement-info p{color:var(--muted);font-size:.95rem;}
+.achievement-year{
+  font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.5rem;
+  color:var(--primary);margin-left:auto;flex-shrink:0;
+}
 
-/* ===== FOOTER ===== */
-footer{background:var(--void);border-top:1px solid var(--border);padding:3rem 4%;text-align:center;}
-.footer-logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.2rem;color:var(--primary);margin-bottom:1rem;letter-spacing:.1em;}
-.footer-text{color:var(--muted);font-size:.9rem;}
-.footer-links{display:flex;gap:2rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap;}
-.footer-links a:hover{color:var(--primary);}
+/* ============================================
+   NEWS SECTION
+   ============================================ */
+.news-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.5rem;margin-top:3rem;
+}
+.news-card{
+  background:var(--steel);border:1px solid var(--border);border-radius:4px;
+  overflow:hidden;transition:all .4s ease;cursor:pointer;
+}
+.news-card:hover{
+  transform:translateY(-8px);border-color:var(--primary);
+  box-shadow:var(--shadow-card);
+}
+.news-img{
+  height:200px;background:var(--grad-brand);position:relative;overflow:hidden;
+}
+.news-img::after{
+  content:'📰';position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;font-size:4rem;opacity:.3;
+  background:linear-gradient(180deg,transparent 40%,rgba(3,3,6,0.9));
+}
+.news-card:hover .news-img{transform:scale(1.05);}
+.news-body{padding:1.5rem;}
+.news-date{
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--primary);font-weight:700;margin-bottom:.5rem;
+}
+.news-card h3{
+  font-family:'Orbitron',sans-serif;font-size:1.1rem;margin-bottom:.5rem;
+  line-height:1.4;
+}
+.news-card p{font-size:.9rem;color:var(--muted);line-height:1.6;}
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .nav-links{display:none;}
+/* ============================================
+   PARTNERS
+   ============================================ */
+.partners-wall{
+  margin-top:3rem;overflow:hidden;padding:2rem 0;
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+.partners-track{
+  display:flex;gap:4rem;animation:partnerScroll 25s linear infinite;
+  width:max-content;
+}
+.partner-logo{
+  flex-shrink:0;width:160px;height:80px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',sans-serif;font-weight:800;font-size:1.2rem;
+  color:var(--muted);border:1px solid var(--border);border-radius:4px;
+  background:var(--steel);transition:all .3s ease;
+}
+.partner-logo:hover{
+  color:var(--primary);border-color:var(--primary);
+  box-shadow:var(--shadow-glow);transform:scale(1.05);
+}
+@keyframes partnerScroll{to{transform:translateX(-50%);}}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem;
+}
+.contact-info{display:flex;flex-direction:column;gap:1.2rem;}
+.contact-item{
+  display:flex;align-items:center;gap:1rem;padding:1.2rem;
+  background:var(--steel);border:1px solid var(--border);border-radius:4px;
+  transition:all .3s ease;
+}
+.contact-item:hover{
+  transform:translateX(6px);border-color:var(--primary);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+.contact-icon{
+  width:48px;height:48px;flex-shrink:0;border-radius:50%;
+  background:rgba(0,191,255,0.1);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+}
+.contact-text h4{
+  font-family:'Orbitron',sans-serif;font-size:.9rem;letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:.2rem;
+}
+.contact-text p{color:var(--muted);font-size:.95rem;}
+.contact-form{
+  background:var(--steel);border:1px solid var(--border);border-radius:4px;
+  padding:2rem;display:flex;flex-direction:column;gap:1rem;
+}
+.form-input{
+  width:100%;padding:1rem;background:var(--void);border:1px solid var(--border);
+  border-radius:2px;color:var(--silver);font-family:inherit;font-size:1rem;
+  transition:all .3s;
+}
+.form-input:focus{
+  outline:none;border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(0,191,255,0.15);
+}
+textarea.form-input{min-height:140px;resize:vertical;}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer{
+  background:var(--void);border-top:1px solid var(--border);
+  padding:4rem 4% 2rem;
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+  max-width:1280px;margin:0 auto 3rem;
+}
+.footer-brand p{color:var(--muted);font-size:.95rem;margin-top:1rem;max-width:320px;}
+.footer-social{display:flex;gap:.8rem;margin-top:1.5rem;}
+.social-link{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--border);color:var(--muted);font-size:1rem;
+  transition:all .3s ease;
+}
+.social-link:hover{
+  background:var(--grad-brand);color:#000;border-color:transparent;
+  transform:translateY(-3px);box-shadow:var(--shadow-glow);
+}
+.footer-col h4{
+  font-family:'Orbitron',sans-serif;font-size:.85rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--primary);margin-bottom:1.2rem;
+}
+.footer-col a{
+  display:block;padding:.4rem 0;color:var(--muted);font-size:.95rem;
+  transition:all .2s;
+}
+.footer-col a:hover{color:var(--silver);padding-left:.3rem;}
+.footer-bottom{
+  max-width:1280px;margin:0 auto;padding-top:2rem;
+  border-top:1px solid rgba(0,191,255,0.1);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+  font-size:.85rem;color:var(--muted);letter-spacing:.05em;
+}
+.footer-bottom .slogan{
+  font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:.2em;
+  color:var(--primary);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media(max-width:968px){
+  .nav-links,.nav-cta{display:none;}
   .hamburger{display:flex;}
-  .grid-3,.grid-2{grid-template-columns:1fr;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2.5rem;}
+}
+@media(max-width:640px){
+  .footer-grid{grid-template-columns:1fr;}
+  .achievement{flex-direction:column;text-align:center;gap:1rem;}
+  .achievement-year{margin-left:0;}
+  .about-stats{grid-template-columns:1fr;}
 }
 @media(prefers-reduced-motion:reduce){
-  *,.hero-glow,.hero-grid,.marquee,.reveal{animation:none !important;transition:none !important;}
-  .reveal{opacity:1;transform:none;}
+  *{animation:none !important;transition:none !important;}
+  .reveal{opacity:1;transform:none !important;}
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<nav>
+<!-- ============================================
+     PRELOADER
+     ============================================ -->
+<div class="preloader" id="preloader">
+  <svg class="preloader-crown" viewBox="0 0 200 170" fill="none">
+    <path d="M20 114 L20 50 L60 90 L100 18 L140 90 L180 50 L180 114 Z" stroke="#00BFFF" stroke-width="8" stroke-linejoin="round"/>
+    <rect x="20" y="114" width="160" height="28" rx="4" fill="#00BFFF" opacity=".8"/>
+    <circle cx="100" cy="130" r="10" fill="#00FFE5"/>
+    <circle cx="60" cy="130" r="6" fill="#00BFFF"/>
+    <circle cx="140" cy="130" r="6" fill="#00BFFF"/>
+  </svg>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="preloader-text">Loading K1NG</div>
+</div>
+
+<!-- ============================================
+     CUSTOM CURSOR
+     ============================================ -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav class="nav" id="nav">
   <a href="#home" class="logo">
     <svg viewBox="0 0 200 170" fill="none">
       <path d="M20 114 L20 50 L60 90 L100 18 L140 90 L180 50 L180 114 Z" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
       <circle cx="100" cy="130" r="8" fill="currentColor"/>
     </svg>
-    K1NG
+    K<span>1</span>NG
   </a>
   <ul class="nav-links">
     <li><a href="#home" class="active">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#team">Team</a></li>
-    <li><a href="#status">Status</a></li>
+    <li><a href="#roster">Roster</a></li>
+    <li><a href="#news">News</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="hamburger" id="hamburger">
+  <a href="#contact" class="nav-cta">Join Us</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#home">Home</a>
   <a href="#about">About</a>
-  <a href="#team">Team</a>
-  <a href="#status">Status</a>
+  <a href="#roster">Roster</a>
+  <a href="#news">News</a>
   <a href="#contact">Contact</a>
 </div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- ===== HERO ===== -->
+<!-- ============================================
+     HERO
+     ============================================ -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  
-  <svg class="crown-icon" viewBox="0 0 200 170" fill="none">
-    <path d="M20 114 L20 50 L60 90 L100 18 L140 90 L180 50 L180 114 Z" stroke="var(--primary)" stroke-width="8" stroke-linejoin="round"/>
-    <circle cx="100" cy="130" r="8" fill="var(--primary)"/>
-    <circle cx="60" cy="130" r="5" fill="var(--primary)" opacity=".7"/>
-    <circle cx="140" cy="130" r="5" fill="var(--primary)" opacity=".7"/>
+  <div class="particles" id="particles"></div>
+
+  <svg class="hero-crown" viewBox="0 0 200 170" fill="none">
+    <path d="M20 114 L20 50 L60 90 L100 18 L140 90 L180 50 L180 114 Z" stroke="#00BFFF" stroke-width="9" stroke-linejoin="round" fill="rgba(0,191,255,0.05)"/>
+    <rect x="20" y="114" width="160" height="30" rx="5" fill="rgba(0,191,255,0.15)" stroke="#00BFFF" stroke-width="2"/>
+    <circle cx="100" cy="130" r="10" fill="#00FFE5" filter="url(#glow)"/>
+    <circle cx="60" cy="130" r="6" fill="#00BFFF"/>
+    <circle cx="140" cy="130" r="6" fill="#00BFFF"/>
+    <circle cx="100" cy="18" r="5" fill="#00FFE5"/>
+    <circle cx="20" cy="50" r="4" fill="#00BFFF"/>
+    <circle cx="180" cy="50" r="4" fill="#00BFFF"/>
+    <defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
   </svg>
-  
-  <p class="hero-slogan">ONE NAME. ONE CROWN.</p>
-  <h1><span>K1NG</span> ESPORTS</h1>
-  <p class="hero-sub">Est. 2026 — Excellence Reigns. Built to compete. Built to rule.</p>
-  <div class="hero-buttons">
-    <a href="#team" class="btn btn-primary">Meet the Roster</a>
-    <a href="#contact" class="btn btn-outline">Join the Movement</a>
+
+  <p class="hero-slogan">Est. 2026 · One Name. One Crown.</p>
+  <h1><span class="k1ng">K1NG</span> <span class="esports">ESPORTS</span></h1>
+  <div class="typewriter" id="typewriter"></div>
+
+  <div class="hero-btns">
+    <a href="#roster" class="btn btn-primary">View Roster →</a>
+    <a href="#contact" class="btn btn-outline">Apply Now</a>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll Down</span>
   </div>
 </section>
 
-<!-- ===== MARQUEE ===== -->
+<!-- ============================================
+     MARQUEE
+     ============================================ -->
 <div class="marquee">
   <div class="marquee-track">
-    <span>K1NG ESPORTS</span><span>✦</span>
-    <span>OWNED BY TAZZ & AJ</span><span>✦</span>
-    <span>COMPETE · BUILD · REIGN</span><span>✦</span>
-    <span>MOD APPLICATIONS OPEN</span><span>✦</span>
-    <span>K1NG ESPORTS</span><span>✦</span>
-    <span>OWNED BY TAZZ & AJ</span><span>✦</span>
-    <span>COMPETE · BUILD · REIGN</span><span>✦</span>
-    <span>MOD APPLICATIONS OPEN</span><span>✦</span>
+    <span>👑 K1NG ESPORTS</span><span>✦</span>
+    <span>Owned by Tazz & Aj</span><span>✦</span>
+    <span>Compete · Build · Reign</span><span>✦</span>
+    <span>Mod Applications Open</span><span>✦</span>
+    <span>One Name. One Crown.</span><span>✦</span>
+    <span>👑 K1NG ESPORTS</span><span>✦</span>
+    <span>Owned by Tazz & Aj</span><span>✦</span>
+    <span>Compete · Build · Reign</span><span>✦</span>
+    <span>Mod Applications Open</span><span>✦</span>
+    <span>One Name. One Crown.</span><span>✦</span>
   </div>
 </div>
 
-<!-- ===== ABOUT ===== -->
-<section id="about" class="section-padding">
-  <div class="container text-center reveal">
-    <span class="tag">Who We Are</span>
-    <h2 class="heading">Built to Reign</h2>
-    <div class="about-content">
-      <p>K1NG ESPORTS isn't just another team — it's a legacy in the making. Founded in 2026 by Tazz and Aj, we set out to create an organization that competes at the highest level while building a community that stands together.</p>
-      <p>From our competitive roster to our growing community, every member carries the crown. We don't just play the game — we shape the scene.</p>
-      <p><em>One Name. One Crown. We Are K1NG.</em></p>
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="text-center reveal reveal-up">
+      <span class="tag">Who We Are</span>
+      <h2 class="heading">Built to <span class="heading-gradient">Reign Supreme</span></h2>
+      <p class="subheading">K1NG ESPORTS was founded by Tazz & Aj in 2026 with one mission: dominate the competition and build a community that stands together. We don’t just play the game — we define the meta.</p>
     </div>
-  </div>
-</section>
-
-<!-- ===== TEAM ===== -->
-<section id="team" class="section-padding" style="background:var(--void);">
-  <div class="container reveal">
-    <div class="text-center">
-      <span class="tag">The Roster</span>
-      <h2 class="heading">Who Runs K1NG</h2>
-      <p class="subheading">Owners, players, and the spots we're still looking to fill.</p>
-    </div>
-    
-    <h3 style="font-family:'Orbitron',sans-serif;font-size:1.3rem;margin:3rem 0 1rem;color:var(--primary);">👑 Owners</h3>
-    <div class="team-grid">
-      <div class="card team-member">
-        <div class="member-avatar">TZ</div>
-        <span class="member-role">Owner · Founder</span>
-        <h4 class="member-name">Tazz</h4>
+    <div class="about-grid">
+      <div class="reveal reveal-left">
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1.5rem;margin-bottom:1rem;">Our Philosophy</h3>
+        <p style="color:var(--muted);line-height:1.8;margin-bottom:1rem;">
+          Every player, every mod, every community member carries the K1NG crown. We value excellence, integrity, and relentless improvement. From ranked ladders to LAN events, we represent with pride.
+        </p>
+        <p style="color:var(--muted);line-height:1.8;">
+          This isn’t just an org — it’s a movement. A place where talent meets opportunity, and where legends are forged.
+        </p>
       </div>
-      <div class="card team-member">
-        <div class="member-avatar">AJ</div>
-        <span class="member-role">Owner · Founder</span>
-        <h4 class="member-name">Aj</h4>
-      </div>
-    </div>
-    
-    <h3 style="font-family:'Orbitron',sans-serif;font-size:1.3rem;margin:3rem 0 1rem;color:var(--primary);">⚔️ Competitive Roster</h3>
-    <div class="team-grid">
-      <div class="card team-member"><div class="member-avatar">TZ</div><span class="member-role">Player</span><h4 class="member-name">Tazz</h4></div>
-      <div class="card team-member"><div class="member-avatar">AJ</div><span class="member-role">Player</span><h4 class="member-name">Aj</h4></div>
-      <div class="card team-member"><div class="member-avatar">OA</div><span class="member-role">Player</span><h4 class="member-name">Oasis</h4></div>
-      <div class="card team-member"><div class="member-avatar">PL</div><span class="member-role">Player</span><h4 class="member-name">Pluckzy</h4></div>
-      <div class="card team-member"><div class="member-avatar">SP</div><span class="member-role">Player</span><h4 class="member-name">Sparks</h4></div>
-      <div class="card team-member"><div class="member-avatar">TR</div><span class="member-role">Player</span><h4 class="member-name">Trist</h4></div>
-    </div>
-    
-    <h3 style="font-family:'Orbitron',sans-serif;font-size:1.3rem;margin:3rem 0 1rem;color:var(--open);">🔓 Open Roles — Mod Team</h3>
-    <div class="team-grid">
-      <div class="card team-member open-slot"><div class="member-avatar">+</div><span class="member-role"><span class="pulse-dot"></span>Open</span><h4 class="member-name">Mod Slot 1</h4></div>
-      <div class="card team-member open-slot"><div class="member-avatar">+</div><span class="member-role"><span class="pulse-dot"></span>Open</span><h4 class="member-name">Mod Slot 2</h4></div>
-      <div class="card team-member open-slot"><div class="member-avatar">+</div><span class="member-role"><span class="pulse-dot"></span>Open</span><h4 class="member-name">Mod Slot 3</h4></div>
-      <div class="card team-member open-slot"><div class="member-avatar">+</div><span class="member-role"><span class="pulse-dot"></span>Open</span><h4 class="member-name">Mod Slot 4</h4></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATUS ===== -->
-<section id="status" class="section-padding">
-  <div class="container reveal">
-    <div class="text-center">
-      <span class="tag">Progress</span>
-      <h2 class="heading">Org Status</h2>
-      <p class="subheading">Where we're at across every part of the organization.</p>
-    </div>
-    
-    <div style="max-width:700px;margin:3rem auto 0;">
-      <div class="status-item">
-        <div class="status-top">
-          <h3 style="font-family:'Orbitron',sans-serif;">Discord Server</h3>
-          <span class="status-percent" data-value="80">80%</span>
+      <div class="about-stats reveal reveal-right">
+        <div class="stat-card">
+          <div class="stat-num" data-count="6">0</div>
+          <div class="stat-label">Pro Players</div>
         </div>
-        <p style="color:var(--muted);font-size:.9rem;">Core channels & roles configured — growing fast.</p>
-        <div class="status-bar"><div class="status-fill" data-width="80"></div></div>
-      </div>
-      
-      <div class="status-item">
-        <div class="status-top">
-          <h3 style="font-family:'Orbitron',sans-serif;">Team & Roster</h3>
-          <span class="status-percent" data-value="65">65%</span>
+        <div class="stat-card">
+          <div class="stat-num" data-count="2">0</div>
+          <div class="stat-label">Founders</div>
         </div>
-        <p style="color:var(--muted);font-size:.9rem;">Comp roster locked — mod team recruiting now.</p>
-        <div class="status-bar"><div class="status-fill" data-width="65"></div></div>
-      </div>
-      
-      <div class="status-item">
-        <div class="status-top">
-          <h3 style="font-family:'Orbitron',sans-serif;">Website & Brand</h3>
-          <span class="status-percent" data-value="95">95%</span>
+        <div class="stat-card">
+          <div class="stat-num" data-count="4">0</div>
+          <div class="stat-label">Open Mod Spots</div>
         </div>
-        <p style="color:var(--muted);font-size:.9rem;">Live, polished, and constantly evolving.</p>
-        <div class="status-bar"><div class="status-fill" data-width="95"></div></div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="∞">∞</div>
+          <div class="stat-label">Ambition</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact" class="section-padding" style="background:var(--void);">
-  <div class="container text-center reveal">
-    <span class="tag">Get Involved</span>
-    <h2 class="heading">Join the Crown</h2>
-    <p class="subheading">Want to play, apply for mod, or partner? Reach out to us.</p>
-    
-    <div class="contact-links">
-      <a href="#" class="contact-link">📧 contact@k1ngesports.com</a>
-      <a href="#" class="contact-link">🐦 Twitter / X: @K1NGesports</a>
-      <a href="#" class="contact-link">💬 Discord — Join the Server</a>
+<!-- ============================================
+     ROSTER
+     ============================================ -->
+<section class="section section-dark" id="roster">
+  <div class="container">
+    <div class="text-center reveal reveal-up">
+      <span class="tag">The Squad</span>
+      <h2 class="heading">Meet the <span class="heading-gradient">K1NG Roster</span></h2>
+      <p class="subheading">The owners, the warriors, and the future leaders of our community.</p>
+    </div>
+
+    <div class="roster-filters reveal reveal-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="owner">Owners</button>
+      <button class="filter-btn" data-filter="player">Players</button>
+      <button class="filter-btn" data-filter="open">Open Roles</button>
+    </div>
+
+    <div class="roster-grid">
+      <!-- OWNERS -->
+      <div class="player-card reveal reveal-up" data-category="owner">
+        <div class="player-avatar">TZ</div>
+        <span class="player-role role-owner">Owner</span>
+        <h3 class="player-name">Tazz</h3>
+        <p class="player-tag">Founder · IGL</p>
+      </div>
+      <div class="player-card reveal reveal-up" data-category="owner">
+        <div class="player-avatar">AJ</div>
+        <span class="player-role role-owner">Owner</span>
+        <h3 class="player-name">Aj</h3>
+        <p class="player-tag">Founder · Support</p>
+      </div>
+      <!-- PLAYERS -->
+      <div class="player-card reveal reveal-up" data-category="player">
+        <div class="player-avatar">OA</div>
+        <span class="player-role role-player">Player</span>
+        <h3 class="player-name">Oasis</h3>
+        <p class="player-tag">Duelist</p>
+      </div>
+      <div class="player-card reveal reveal-up" data-category="player">
+        <div class="player-avatar">PL</div>
+        <span class="player-role role-player">Player</span>
+        <h3 class="player-name">Pluckzy</h3>
+        <p class="player-tag">Controller</p>
+      </div>
+      <div class="player-card reveal reveal-up" data-category="player">
+        <div class="player-avatar">SP</div>
+        <span class="player-role role-player">Player</span>
+        <h3 class="player-name">Sparks</h3>
+        <p class="player-tag">Initiator</p>
+      </div>
+      <div class="player-card reveal reveal-up" data-category="player">
+        <div class="player-avatar">TR</div>
+        <span class="player-role role-player">Player</span>
+        <h3 class="player-name">Trist</h3>
+        <p class="player-tag">Sentinel</p>
+      </div>
+      <!-- OPEN MOD SLOTS -->
+      <div class="player-card open-card reveal reveal-up" data-category="open">
+        <div class="player-avatar">+</div>
+        <span class="player-role role-open"><span class="pulse-dot"></span>Open</span>
+        <h3 class="player-name">Mod Slot 1</h3>
+        <p class="player-tag">Apply Now</p>
+      </div>
+      <div class="player-card open-card reveal reveal-up" data-category="open">
+        <div class="player-avatar">+</div>
+        <span class="player-role role-open"><span class="pulse-dot"></span>Open</span>
+        <h3 class="player-name">Mod Slot 2</h3>
+        <p class="player-tag">Apply Now</p>
+      </div>
+      <div class="player-card open-card reveal reveal-up" data-category="open">
+        <div class="player-avatar">+</div>
+        <span class="player-role role-open"><span class="pulse-dot"></span>Open</span>
+        <h3 class="player-name">Mod Slot 3</h3>
+        <p class="player-tag">Apply Now</p>
+      </div>
+      <div class="player-card open-card reveal reveal-up" data-category="open">
+        <div class="player-avatar">+</div>
+        <span class="player-role role-open"><span class="pulse-dot"></span>Open</span>
+        <h3 class="player-name">Mod Slot 4</h3>
+        <p class="player-tag">Apply Now</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-logo">👑 K1NG ESPORTS</div>
-  <p class="footer-text">© 2026 K1NG ESPORTS. All Rights Reserved.</p>
-  <p class="footer-text" style="margin-top:.5rem;">One Name. One Crown.</p>
-  <div class="footer-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
+<!-- ============================================
+     ACHIEVEMENTS
+     ============================================ -->
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="text-center reveal reveal-up">
+      <span class="tag">Legacy</span>
+      <h2 class="heading">Our <span class="heading-gradient">Road to Glory</span></h2>
+      <p class="subheading">Milestones on our journey to the top. More coming soon 👀</p>
+    </div>
+    <div class="achievement-list">
+      <div class="achievement reveal reveal-left">
+        <div class="trophy">🏆</div>
+        <div class="achievement-info">
+          <h3>K1NG ESPORTS Officially Launched</h3>
+          <p>Founded by Tazz & Aj — roster locked, community begins.</p>
+        </div>
+        <div class="achievement-year">2026</div>
+      </div>
+      <div class="achievement reveal reveal-left">
+        <div class="trophy">🌐</div>
+        <div class="achievement-info">
+          <h3>Official Website Goes Live</h3>
+          <p>Premium K1NG site deployed — the world meets the crown.</p>
+        </div>
+        <div class="achievement-year">2026</div>
+      </div>
+      <div class="achievement reveal reveal-left">
+        <div class="trophy">🎯</div>
+        <div class="achievement-info">
+          <h3>First Tournament Appearance</h3>
+          <p>Our competitive roster makes their debut on the big stage.</p>
+        </div>
+        <div class="achievement-year">Soon</div>
+      </div>
+      <div class="achievement reveal reveal-left">
+        <div class="trophy">👑</div>
+        <div class="achievement-info">
+          <h3>World Championship Title</h3>
+          <p>The ultimate prize. We’re coming for it.</p>
+        </div>
+        <div class="achievement-year">Future</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     NEWS
+     ============================================ -->
+<section class="section section-dark" id="news">
+  <div class="container">
+    <div class="text-center reveal reveal-up">
+      <span class="tag">Latest</span>
+      <h2 class="heading">News & <span class="heading-gradient">Announcements</span></h2>
+      <p class="subheading">Straight from Tazz & Aj to the K1NG community.</p>
+    </div>
+    <div class="news-grid">
+      <article class="news-card reveal reveal-up">
+        <div class="news-img"></div>
+        <div class="news-body">
+          <div class="news-date">Aug 12 · 2026</div>
+          <h3>K1NG ESPORTS IS OFFICIALLY LIVE</h3>
+          <p>The roster is locked, the Discord is live, and the crown is ready. Welcome to the new era.</p>
+        </div>
+      </article>
+      <article class="news-card reveal reveal-up">
+        <div class="news-img"></div>
+        <div class="news-body">
+          <div class="news-date">Aug 12 · 2026</div>
+          <h3>MOD APPLICATIONS NOW OPEN — 4 SPOTS</h3>
+          <p>Want to help run the K1NG community? Reach out to Tazz or Aj to apply.</p>
+        </div>
+      </article>
+      <article class="news-card reveal reveal-up">
+        <div class="news-img"></div>
+        <div class="news-body">
+          <div class="news-date">Coming Soon</div>
+          <h3>FIRST TOURNAMENT ANNOUNCEMENT</h3>
+          <p>Our competitive roster will debut soon. Stay tuned for dates and stream links.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PARTNERS
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal reveal-up">
+      <span class="tag">Partners</span>
+      <h2 class="heading">Powered By <span class="heading-gradient">The Best</span></h2>
+      <p class="subheading">Partner with K1NG — reach a passionate, growing gaming community.</p>
+    </div>
+    <div class="partners-wall reveal reveal-up">
+      <div class="partners-track">
+        <div class="partner-logo">YOUR BRAND</div>
+        <div class="partner-logo">SPONSOR 1</div>
+        <div class="partner-logo">SPONSOR 2</div>
+        <div class="partner-logo">SPONSOR 3</div>
+        <div class="partner-logo">SPONSOR 4</div>
+        <div class="partner-logo">SPONSOR 5</div>
+        <div class="partner-logo">YOUR BRAND</div>
+        <div class="partner-logo">SPONSOR 1</div>
+        <div class="partner-logo">SPONSOR 2</div>
+        <div class="partner-logo">SPONSOR 3</div>
+        <div class="partner-logo">SPONSOR 4</div>
+        <div class="partner-logo">SPONSOR 5</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONTACT
+     ============================================ -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="text-center reveal reveal-up">
+      <span class="tag">Join The Crown</span>
+      <h2 class="heading">Get In <span class="heading-gradient">Touch</span></h2>
+      <p class="subheading">Applying for mod? Want to partner? Just want to say hi? We’re here.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal reveal-left">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <p>contact@k1ngesports.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🐦</div>
+          <div class="contact-text">
+            <h4>Twitter / X</h4>
+            <p>@K1NGesports</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div class="contact-text">
+            <h4>Discord</h4>
+            <p>Join the Official K1NG Server</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🎮</div>
+          <div class="contact-text">
+            <h4>Mod Applications</h4>
+            <p>Message Tazz or Aj on Discord</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal reveal-right" onsubmit="event.preventDefault();this.querySelector('.btn-primary').textContent='Sent! 👑'">
+        <input type="text" class="form-input" placeholder="Your Name" required>
+        <input type="email" class="form-input" placeholder="Your Email" required>
+        <input type="text" class="form-input" placeholder="Subject (e.g. Mod App)">
+        <textarea class="form-input" placeholder="Your message..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <svg viewBox="0 0 200 170" fill="none" style="width:24px;height:24px;">
+          <path d="M20 114 L20 50 L60 90 L100 18 L140 90 L180 50 L180 114 Z" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
+          <circle cx="100" cy="130" r="8" fill="currentColor"/>
+        </svg>
+        K<span style="color:var(--primary)">1</span>NG
+      </div>
+      <p>One Name. One Crown. K1NG ESPORTS — elite competitive gaming, built by Tazz & Aj.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link">𝕏</a>
+        <a href="#" class="social-link">💬</a>
+        <a href="#" class="social-link">📺</a>
+        <a href="#" class="social-link">📸</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#roster">Roster</a>
+      <a href="#news">News</a>
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Discord</a>
+      <a href="#">Apply for Mod</a>
+      <a href="#">Tournaments</a>
+      <a href="#">Rules</a>
+    </div>
+    <div class="footer-col">
+      <h4>Business</h4>
+      <a href="#contact">Sponsorships</a>
+      <a href="#contact">Partnerships</a>
+      <a href="#contact">Press</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 K1NG ESPORTS. All rights reserved.</p>
+    <p class="slogan">ONE NAME · ONE CROWN</p>
   </div>
 </footer>
 
-<!-- ===== SCRIPTS ===== -->
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
 <script>
-// Mobile Menu
+/* ============================================
+   PRELOADER
+   ============================================ */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('preloader').classList.add('hidden');
+  }, 2000);
+});
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+const cursor = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursorDot');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  cursorDot.style.left = e.clientX + 'px';
+  cursorDot.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, .player-card, .news-card, .stat-card, .achievement, .contact-item, .partner-logo').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+});
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+const nav = document.getElementById('nav');
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+  // Active link
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   mobileMenu.classList.toggle('open');
+  mobileOverlay.classList.toggle('open');
 });
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
+mobileOverlay.addEventListener('click', () => {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
+    mobileOverlay.classList.remove('open');
   });
 });
 
-// Active Nav Link
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    if(window.scrollY >= section.offsetTop - 150) current = section.getAttribute('id');
+/* ============================================
+   PARTICLES
+   ============================================ */
+const particleField = document.getElementById('particles');
+for (let i = 0; i < 35; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
+  const dur = 8 + Math.random() * 10;
+  p.style.animationDuration = dur + 's';
+  p.style.animationDelay = Math.random() * dur + 's';
+  p.style.width = p.style.height = (2 + Math.random() * 3) + 'px';
+  p.style.opacity = 0.4 + Math.random() * 0.6;
+  particleField.appendChild(p);
+}
+
+/* ============================================
+   TYPEWRITER EFFECT
+   ============================================ */
+const typewriter = document.getElementById('typewriter');
+const phrases = [
+  'One Name. One Crown. We Are K1NG.',
+  'Competitive Excellence · Community First',
+  'Owned by Tazz & Aj · Est. 2026',
+  'Mod Applications Are Now Open 👀'
+];
+let pIdx = 0, cIdx = 0, deleting = false;
+function type() {
+  const current = phrases[pIdx];
+  if (!deleting) {
+    typewriter.innerHTML = current.slice(0, ++cIdx) + '<span class="caret"></span>';
+    if (cIdx === current.length) { deleting = true; setTimeout(type, 2200); return; }
+  } else {
+    typewriter.innerHTML = current.slice(0, --cIdx) + '<span class="caret"></span>';
+    if (cIdx === 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; }
+  }
+  setTimeout(type, deleting ? 40 : 70);
+}
+type();
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ============================================
+   STAT COUNTERS
+   ============================================ */
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = el.dataset.count;
+    if (target === '∞') { el.textContent = '∞'; return; }
+    const end = parseInt(target);
+    let cur = 0;
+    const step = Math.max(1, Math.ceil(end / 40));
+    const tick = () => {
+      cur += step;
+      if (cur >= end) { el.textContent = end; return; }
+      el.textContent = cur;
+      requestAnimationFrame(tick);
+    };
+    tick();
+    counterObs.unobserve(el);
   });
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num').forEach(el => counterObs.observe(el));
+
+/* ============================================
+   ROSTER FILTERS
+   ============================================ */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.player-card').forEach(card => {
+      const show = f === 'all' || card.dataset.category === f;
+      card.classList.toggle('hidden', !show);
+    });
   });
 });
 
-// Scroll Reveal Animation
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('in-view');
-  });
-}, {threshold:.1});
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Status Bar Animation
-const statusSection = document.getElementById('status');
-let statusAnimated = false;
-const animateStatus = () => {
-  if(statusAnimated) return;
-  statusAnimated = true;
-  document.querySelectorAll('.status-fill').forEach(bar => {
-    const width = bar.getAttribute('data-width');
-    setTimeout(() => bar.style.width = width + '%', 300);
-  });
-};
-const statusObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) animateStatus();
-  });
-}, {threshold:.3});
-statusObserver.observe(statusSection);
-
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+/* ============================================
+   SMOOTH SCROLL OFFSET
+   ============================================ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t) return;
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target) window.scrollTo({top: target.offsetTop - 70, behavior:'smooth'});
+    window.scrollTo({ top: t.offsetTop - 64, behavior: 'smooth' });
   });
 });
 </script>
-
 </body>
-</html> 
+</html>
