@@ -5,183 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Teams | K1NG Esports</title>
-    <meta name="description" content="K1NG Esports competitive teams and games.">
+    <meta name="description" content="Meet the K1NG Esports competitive roster.">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="nav-container">
+<header class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-mark">♛</span>
+        <span>K1NG</span>
+        <small>ESPORTS</small>
+    </a>
 
+    <button class="menu-toggle" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="teams.html" class="active">Teams</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="contact.html" class="nav-button">JOIN K1NG</a>
+</header>
+
+
+<main>
+
+<section class="page-hero">
+    <div class="container reveal">
+        <p class="eyebrow">THE ROSTER</p>
+        <h1>MEET THE <span>K1NGS.</span></h1>
+        <p>
+            Players. Competitors. Champions.
+        </p>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+
+        <div class="filter-bar reveal">
+            <button class="filter-btn active" data-filter="all">ALL</button>
+            <button class="filter-btn" data-filter="fortnite">FORTNITE</button>
+            <button class="filter-btn" data-filter="cod">CALL OF DUTY</button>
+            <button class="filter-btn" data-filter="valorant">VALORANT</button>
+        </div>
+
+
+        <div class="roster-grid">
+
+            <article class="player-card reveal" data-game="fortnite">
+                <div class="player-card-top">
+                    <span>#01</span>
+                    <span>FORTNITE</span>
+                </div>
+
+                <div class="player-avatar">
+                    ♛
+                </div>
+
+                <div class="player-card-info">
+                    <span class="role">COMPETITIVE PLAYER</span>
+                    <h2>K1NG T4ZZ</h2>
+                    <p>K1NG Esports</p>
+                </div>
+            </article>
+
+
+            <article class="player-card reveal" data-game="fortnite">
+                <div class="player-card-top">
+                    <span>#02</span>
+                    <span>FORTNITE</span>
+                </div>
+
+                <div class="player-avatar">
+                    ♛
+                </div>
+
+                <div class="player-card-info">
+                    <span class="role">PLAYER</span>
+                    <h2>K1NG PLAYER</h2>
+                    <p>Roster Member</p>
+                </div>
+            </article>
+
+
+            <article class="player-card reveal" data-game="cod">
+                <div class="player-card-top">
+                    <span>#03</span>
+                    <span>CALL OF DUTY</span>
+                </div>
+
+                <div class="player-avatar">
+                    ♛
+                </div>
+
+                <div class="player-card-info">
+                    <span class="role">COMPETITIVE PLAYER</span>
+                    <h2>K1NG COD</h2>
+                    <p>Roster Member</p>
+                </div>
+            </article>
+
+
+            <article class="player-card reveal" data-game="valorant">
+                <div class="player-card-top">
+                    <span>#04</span>
+                    <span>VALORANT</span>
+                </div>
+
+                <div class="player-avatar">
+                    ♛
+                </div>
+
+                <div class="player-card-info">
+                    <span class="role">COMPETITIVE PLAYER</span>
+                    <h2>K1NG VAL</h2>
+                    <p>Roster Member</p>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="cta-section">
+    <div class="container cta-content reveal">
+        <p class="eyebrow">THINK YOU CAN COMPETE?</p>
+        <h2>JOIN THE<br><span>ROSTER.</span></h2>
+
+        <a href="contact.html" class="btn btn-primary">
+            APPLY NOW →
+        </a>
+    </div>
+</section>
+
+</main>
+
+
+<footer>
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
             <a href="index.html" class="logo">
-                K1NG<span>ESPORTS</span>
+                <span class="logo-mark">♛</span>
+                <span>K1NG</span>
+                <small>ESPORTS</small>
             </a>
-
-            <button class="menu-toggle" id="menuToggle">
-                ☰
-            </button>
-
-            <nav id="mainNav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="teams.html" class="active">Teams</a>
-                <a href="achievements.html">Achievements</a>
-                <a href="partners.html">Partners</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-
-        </div>
-    </header>
-
-
-    <!-- HERO -->
-    <section class="page-hero">
-        <div class="container">
-            <p class="eyebrow">COMPETITIVE DIVISION</p>
-
-            <h1>
-                OUR <span>TEAMS</span>
-            </h1>
-
-            <p>
-                K1NG Esports competes across the biggest competitive titles.
-            </p>
-        </div>
-    </section>
-
-
-    <!-- GAME BUTTONS -->
-    <section class="teams-section">
-
-        <div class="container">
-
-            <div class="game-tabs">
-
-                <button
-                    class="game-tab active"
-                    data-game="fortnite">
-                    FORTNITE
-                </button>
-
-                <button
-                    class="game-tab"
-                    data-game="warzone">
-                    WARZONE
-                </button>
-
-            </div>
-
-
-            <!-- FORTNITE -->
-            <div
-                class="game-panel active"
-                id="fortnite">
-
-                <div class="game-header">
-                    <div>
-                        <span class="game-label">K1NG ESPORTS</span>
-
-                        <h2>FORTNITE</h2>
-
-                        <p>
-                            Our Fortnite division competing in
-                            tournaments, ranked events and competitive
-                            competitions.
-                        </p>
-                    </div>
-
-                    <div class="game-status">
-                        <span class="status-dot"></span>
-                        ACTIVE
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- WARZONE -->
-            <div
-                class="game-panel"
-                id="warzone">
-
-                <div class="game-header">
-                    <div>
-                        <span class="game-label">K1NG ESPORTS</span>
-
-                        <h2>WARZONE</h2>
-
-                        <p>
-                            Our Warzone division competing in
-                            competitive matches, tournaments and events.
-                        </p>
-                    </div>
-
-                    <div class="game-status">
-                        <span class="status-dot"></span>
-                        ACTIVE
-                    </div>
-                </div>
-
-            </div>
-
+            <p>ONE NAME. ONE CROWN.</p>
         </div>
 
-    </section>
-
-
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-
-            <h2>WANT TO JOIN K1NG?</h2>
-
-            <p>
-                Think you've got what it takes?
-                Get in touch with our team.
-            </p>
-
-            <a href="contact.html" class="btn">
-                CONTACT US
-            </a>
-
+        <div>
+            <h4>NAVIGATION</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="partners.html">Partners</a>
         </div>
-    </section>
 
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-
-            <div class="footer-content">
-
-                <div>
-                    <h3>K1NG<span>ESPORTS</span></h3>
-                    <p>ONE NAME. ONE CROWN.</p>
-                </div>
-
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="teams.html">Teams</a>
-                    <a href="achievements.html">Achievements</a>
-                    <a href="partners.html">Partners</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                © 2026 K1NG Esports. All rights reserved.
-            </div>
-
+        <div>
+            <h4>CONNECT</h4>
+            <a href="contact.html">Contact</a>
+            <a href="#">Discord</a>
+            <a href="#">TikTok</a>
         </div>
-    </footer>
 
+    </div>
 
-    <script src="js/main.js"></script>
+    <div class="footer-bottom container">
+        <span>© <span class="year"></span> K1NG Esports.</span>
+        <span>ONE NAME. ONE CROWN.</span>
+    </div>
+</footer>
 
+<script src="main.js"></script>
 </body>
 </html>
