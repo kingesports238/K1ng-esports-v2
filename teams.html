@@ -1,435 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Teams | K1NG Esports</title>
+    <meta name="description" content="K1NG Esports competitive teams and games.">
 
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
-<header class="navbar">
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
 
-    <a href="index.html" class="brand">
-        <div class="brand-crown">♛</div>
+            <a href="index.html" class="logo">
+                K1NG<span>ESPORTS</span>
+            </a>
 
-        <div>
-            <strong>K1NG</strong>
-            <span>ESPORTS</span>
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="teams.html" class="active">Teams</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="partners.html">Partners</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
         </div>
-    </a>
-
-    <button class="mobile-menu" id="mobileMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <nav id="mainNav">
-
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="teams.html" class="active">Teams</a>
-        <a href="achievements.html">Achievements</a>
-        <a href="partners.html">Partners</a>
-        <a href="contact.html" class="nav-cta">Join K1NG</a>
-
-    </nav>
-
-</header>
+    </header>
 
 
-<main>
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <p class="eyebrow">COMPETITIVE DIVISION</p>
 
-<section class="page-hero">
+            <h1>
+                OUR <span>TEAMS</span>
+            </h1>
 
-    <span class="eyebrow">
-        COMPETITIVE DIVISIONS
-    </span>
-
-    <h1>
-        THE
-        <strong>TEAMS.</strong>
-    </h1>
-
-    <p>
-        Different games. Different squads.
-        One K1NG standard.
-    </p>
-
-</section>
+            <p>
+                K1NG Esports competes across the biggest competitive titles.
+            </p>
+        </div>
+    </section>
 
 
-<section class="section">
+    <!-- GAME BUTTONS -->
+    <section class="teams-section">
 
-    <div class="team-list">
+        <div class="container">
 
+            <div class="game-tabs">
 
-        <!-- TEAM 1 -->
+                <button
+                    class="game-tab active"
+                    data-game="fortnite">
+                    FORTNITE
+                </button>
 
-        <article class="team-card reveal">
+                <button
+                    class="game-tab"
+                    data-game="warzone">
+                    WARZONE
+                </button>
 
-            <div class="team-number">
-                01
             </div>
 
-            <div class="team-logo">
-                ♛
-            </div>
 
-            <div class="team-info">
+            <!-- FORTNITE -->
+            <div
+                class="game-panel active"
+                id="fortnite">
 
-                <span>
-                    ACTIVE DIVISION
-                </span>
+                <div class="game-header">
+                    <div>
+                        <span class="game-label">K1NG ESPORTS</span>
 
-                <h2>
-                    K1NG WARZONE
-                </h2>
+                        <h2>FORTNITE</h2>
 
-                <p>
-                    Competitive Call of Duty squad focused
-                    on ranked play, tournaments and constant improvement.
-                </p>
+                        <p>
+                            Our Fortnite division competing in
+                            tournaments, ranked events and competitive
+                            competitions.
+                        </p>
+                    </div>
 
-                <div class="team-tags">
-                    <b>CALL OF DUTY</b>
-                    <b>COMPETITIVE</b>
+                    <div class="game-status">
+                        <span class="status-dot"></span>
+                        ACTIVE
+                    </div>
                 </div>
 
             </div>
 
-            <a href="#warzone" class="team-arrow">
-                →
-            </a>
 
-        </article>
+            <!-- WARZONE -->
+            <div
+                class="game-panel"
+                id="warzone">
 
+                <div class="game-header">
+                    <div>
+                        <span class="game-label">K1NG ESPORTS</span>
 
-        <!-- TEAM 2 -->
+                        <h2>WARZONE</h2>
 
-        <article class="team-card reveal">
+                        <p>
+                            Our Warzone division competing in
+                            competitive matches, tournaments and events.
+                        </p>
+                    </div>
 
-            <div class="team-number">
-                02
-            </div>
-
-            <div class="team-logo">
-                ♛
-            </div>
-
-            <div class="team-info">
-
-                <span>
-                    ACTIVE DIVISION
-                </span>
-
-                <h2>
-                    K1NG FORTNITE
-                </h2>
-
-                <p>
-                    Fast mechanics, smart rotations and
-                    tournament-ready players.
-                </p>
-
-                <div class="team-tags">
-                    <b>FORTNITE</b>
-                    <b>COMPETITIVE</b>
+                    <div class="game-status">
+                        <span class="status-dot"></span>
+                        ACTIVE
+                    </div>
                 </div>
 
             </div>
 
-            <a href="#fortnite" class="team-arrow">
-                →
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+
+            <h2>WANT TO JOIN K1NG?</h2>
+
+            <p>
+                Think you've got what it takes?
+                Get in touch with our team.
+            </p>
+
+            <a href="contact.html" class="btn">
+                CONTACT US
             </a>
 
-        </article>
+        </div>
+    </section>
 
 
-        <!-- TEAM 3 -->
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
 
-        <article class="team-card reveal">
+            <div class="footer-content">
 
-            <div class="team-number">
-                03
-            </div>
+                <div>
+                    <h3>K1NG<span>ESPORTS</span></h3>
+                    <p>ONE NAME. ONE CROWN.</p>
+                </div>
 
-            <div class="team-logo">
-                ♛
-            </div>
-
-            <div class="team-info">
-
-                <span>
-                    DEVELOPMENT
-                </span>
-
-                <h2>
-                    K1NG ACADEMY
-                </h2>
-
-                <p>
-                    A development pathway for upcoming
-                    players who want to earn their place.
-                </p>
-
-                <div class="team-tags">
-                    <b>ACADEMY</b>
-                    <b>UPCOMING</b>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="teams.html">Teams</a>
+                    <a href="achievements.html">Achievements</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact</a>
                 </div>
 
             </div>
 
-            <a href="contact.html" class="team-arrow">
-                →
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ROSTER ================= -->
-
-<section class="section roster-section">
-
-    <div class="section-heading">
-
-        <span class="eyebrow">
-            THE CROWN HOLDERS
-        </span>
-
-        <h2>
-            K1NG
-            <strong>ROSTER.</strong>
-        </h2>
-
-    </div>
-
-
-    <div class="roster-grid">
-
-
-        <article class="roster-card reveal">
-
-            <div class="player-image">
-                T4ZZ
+            <div class="footer-bottom">
+                © 2026 K1NG Esports. All rights reserved.
             </div>
 
-            <div class="player-info">
-
-                <small>
-                    CAPTAIN
-                </small>
-
-                <h3>
-                    K1NG T4ZZ
-                </h3>
-
-                <p>
-                    Competitive Player
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="roster-card reveal">
-
-            <div class="player-image">
-                REX
-            </div>
-
-            <div class="player-info">
-
-                <small>
-                    PLAYER
-                </small>
-
-                <h3>
-                    K1NG REX
-                </h3>
-
-                <p>
-                    Entry / Fragger
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="roster-card reveal">
-
-            <div class="player-image">
-                VEX
-            </div>
-
-            <div class="player-info">
-
-                <small>
-                    PLAYER
-                </small>
-
-                <h3>
-                    K1NG VEX
-                </h3>
-
-                <p>
-                    Support / IGL
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="roster-card reveal">
-
-            <div class="player-image">
-                NOVA
-            </div>
-
-            <div class="player-info">
-
-                <small>
-                    PLAYER
-                </small>
-
-                <h3>
-                    K1NG NOVA
-                </h3>
-
-                <p>
-                    Flex Player
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="roster-card reveal">
-
-            <div class="player-image">
-                JAY
-            </div>
-
-            <div class="player-info">
-
-                <small>
-                    CREATOR
-                </small>
-
-                <h3>
-                    K1NG JAY
-                </h3>
-
-                <p>
-                    Content Creator
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="roster-card reveal">
-
-            <div class="player-image">
-                ACE
-            </div>
-
-            <div class="player-info">
-
-                <small>
-                    CREATOR
-                </small>
-
-                <h3>
-                    K1NG ACE
-                </h3>
-
-                <p>
-                    Streamer
-                </p>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<section class="big-cta">
-
-    <span class="eyebrow">
-        THINK YOU HAVE WHAT IT TAKES?
-    </span>
-
-    <h2>
-        EARN YOUR
-        <strong>CROWN.</strong>
-    </h2>
-
-    <a href="contact.html" class="btn btn-primary">
-        APPLY TO K1NG →
-    </a>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <div class="footer-top">
-
-        <a href="index.html" class="brand">
-            <div class="brand-crown">♛</div>
-
-            <div>
-                <strong>K1NG</strong>
-                <span>ESPORTS</span>
-            </div>
-        </a>
-
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="teams.html">Teams</a>
-            <a href="achievements.html">Achievements</a>
-            <a href="partners.html">Partners</a>
-            <a href="contact.html">Contact</a>
         </div>
-
-        <div class="social-links">
-            <a href="#">DS</a>
-            <a href="#">TK</a>
-            <a href="#">YT</a>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <span>© 2026 K1NG ESPORTS. ALL RIGHTS RESERVED.</span>
-        <span>ONE NAME. ONE CROWN.</span>
-    </div>
-
-</footer>
+    </footer>
 
 
-<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
