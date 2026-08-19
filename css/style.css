@@ -1441,274 +1441,144 @@ nav .nav-cta:hover {
     font-size: 12px;
 
     line-height: 1.7;
+    
 }
 
+/* ================================
+   TEAMS PAGE
+================================ */
 
-/* ================= TEAMS ================= */
-
-.team-list {
-
-    display: grid;
-
-    gap: 16px;
+.teams-section {
+    padding: 80px 20px;
 }
 
-
-.team-card {
-
-    display: grid;
-
-    grid-template-columns: 60px 100px 1fr 60px;
-
-    align-items: center;
-
-    gap: 25px;
-
-    padding: 25px;
-
-    min-height: 230px;
-
-    background: #0b0f15;
-
-    border: 1px solid var(--border);
-
-    transition: .3s;
-}
-
-
-.team-card:hover {
-
-    border-color: rgba(117,188,255,.4);
-
-    transform: translateX(5px);
-}
-
-
-.team-number {
-
-    color: rgba(255,255,255,.2);
-
-    font-family: "Barlow Condensed";
-
-    font-size: 35px;
-
-    font-weight: 900;
-}
-
-
-.team-logo {
-
+.game-tabs {
     display: flex;
-
-    align-items: center;
-
     justify-content: center;
-
-    width: 90px;
-    height: 90px;
-
-    color: var(--blue);
-
-    font-size: 50px;
-
-    background: #111822;
-
-    border: 1px solid var(--border);
+    gap: 15px;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
 }
 
-
-.team-info > span {
-
-    color: var(--blue);
-
-    font-size: 8px;
-
-    font-weight: 900;
-
-    letter-spacing: .15em;
+.game-tab {
+    padding: 15px 35px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.04);
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-
-.team-info h2 {
-
-    margin: 7px 0 10px;
-
-    font-family: "Barlow Condensed";
-
-    font-size: 42px;
-
-    line-height: .9;
+.game-tab:hover {
+    transform: translateY(-3px);
+    border-color: #4da3ff;
 }
 
-
-.team-info p {
-
-    max-width: 600px;
-
-    color: var(--muted);
-
-    font-size: 12px;
-
-    line-height: 1.7;
+.game-tab.active {
+    background: #4da3ff;
+    border-color: #4da3ff;
+    color: #fff;
+    box-shadow: 0 0 25px rgba(77,163,255,0.3);
 }
 
-
-.team-tags {
-
-    display: flex;
-
-    gap: 7px;
-
-    margin-top: 13px;
+.game-panel {
+    display: none;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-
-.team-tags b {
-
-    padding: 5px 8px;
-
-    color: #8893a1;
-
-    border: 1px solid var(--border);
-
-    font-size: 7px;
-
-    letter-spacing: .1em;
+.game-panel.active {
+    display: block;
+    animation: teamFade 0.35s ease;
 }
 
-
-.team-arrow {
-
-    width: 50px;
-    height: 50px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: 1px solid var(--border);
-
-    color: var(--blue);
-
-    font-size: 22px;
-
-    transition: .25s;
-}
-
-
-.team-card:hover .team-arrow {
-
-    background: white;
-
-    color: black;
-}
-
-
-/* ================= ROSTER ================= */
-
-.roster-section {
-
-    padding-top: 50px;
-}
-
-
-.roster-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 16px;
-
-    margin-top: 50px;
-}
-
-
-.roster-card {
-
-    overflow: hidden;
-
-    background: #0b0f15;
-
-    border: 1px solid var(--border);
-
-    transition: .3s;
-}
-
-
-.roster-card:hover {
-
-    transform: translateY(-6px);
-
-    border-color: rgba(117,188,255,.4);
-}
-
-
-.player-image {
-
-    height: 300px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: rgba(255,255,255,.12);
-
-    font-family: "Barlow Condensed";
-
-    font-size: 70px;
-
-    font-weight: 900;
-
+.game-header {
+    padding: 45px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
     background:
-
-        radial-gradient(
-            circle,
-            rgba(73,160,255,.18),
-            transparent 35%
-        ),
-
-        #10161e;
+        linear-gradient(
+            135deg,
+            rgba(77,163,255,0.12),
+            rgba(255,255,255,0.025)
+        );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 }
 
-
-.player-info {
-
-    padding: 22px;
+.game-label {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    opacity: 0.6;
 }
 
-
-.player-info small {
-
-    color: var(--blue);
-
-    font-size: 8px;
-
-    font-weight: 900;
-
-    letter-spacing: .15em;
+.game-header h2 {
+    font-size: clamp(40px, 7vw, 70px);
+    margin: 10px 0;
 }
 
-
-.player-info h3 {
-
-    margin: 7px 0;
-
-    font-family: "Barlow Condensed";
-
-    font-size: 32px;
+.game-header p {
+    max-width: 650px;
+    line-height: 1.7;
+    opacity: 0.7;
 }
 
+.game-status {
+    white-space: nowrap;
+    padding: 10px 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 800;
+}
 
-.player-info p {
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #35e889;
+    margin-right: 7px;
+    box-shadow: 0 0 10px rgba(53,232,137,0.8);
+}
 
-    color: var(--muted);
+@keyframes teamFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
 
-    font-size: 11px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .teams-section {
+        padding: 55px 15px;
+    }
+
+    .game-tab {
+        width: 100%;
+    }
+
+    .game-header {
+        padding: 30px 22px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-header h2 {
+        font-size: 42px;
+    }
 }
 
 
