@@ -1,287 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K1NG ESPORTS | ONE NAME. ONE CROWN.</title>
-<meta name="description" content="K1NG ESPORTS — Elite competitive esports organisation founded by Tazz & Aj.">
-<meta name="theme-color" content="#00ccff">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{
-  --black:#020306;--dark:#06090f;--dark-2:#0a0f18;--steel:#111827;
-  --blue:#00ccff;--blue-2:#0088ff;--purple:#7c3aed;
-  --silver:#f1f5f9;--muted:#8b95a7;--line:rgba(0,204,255,0.2);
-  --glow:rgba(0,204,255,0.5);--grad-brand:linear-gradient(135deg,#00ccff 0%,#0088ff 50%,#7c3aed 100%);
-  --grad-silver:linear-gradient(135deg,#ffffff 0%,#94a3b8 100%);--max-width:1280px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:'Inter',sans-serif;background:var(--black);color:var(--silver);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::selection{background:var(--blue);color:var(--black)}
-::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--dark)}
-::-webkit-scrollbar-thumb{background:var(--grad-brand);border-radius:4px}
-a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* BACKGROUND */
-.bg-grid{position:fixed;inset:0;z-index:-5;pointer-events:none;opacity:.25;
-  background-image:linear-gradient(rgba(0,204,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,204,255,.05) 1px,transparent 1px);
-  background-size:50px 50px;mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 85%);animation:gridDrift 30s linear infinite}
-@keyframes gridDrift{to{background-position:50px 50px,50px 50px}}
-.ambient{position:fixed;width:600px;height:600px;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:-3;opacity:.3;animation:amb 15s ease-in-out infinite alternate}
-.ambient.a1{top:-150px;left:-200px;background:radial-gradient(circle,var(--blue),transparent 70%)}
-.ambient.a2{bottom:-150px;right:-200px;background:radial-gradient(circle,var(--purple),transparent 70%);animation-delay:-7s}
-@keyframes amb{to{transform:translate(150px,100px) scale(1.2)}}
+    <title>K1NG Esports | One Name. One Crown.</title>
 
-/* NAV */
-nav{position:fixed;top:0;left:0;width:100%;height:76px;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;
-  background:rgba(2,3,6,.75);border-bottom:1px solid transparent;backdrop-filter:blur(18px);transition:all .35s ease}
-nav.scrolled{height:64px;background:rgba(2,3,6,.95);border-bottom-color:var(--line);box-shadow:0 10px 40px rgba(0,0,0,.35)}
-.logo{display:flex;align-items:center;gap:10px;font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;letter-spacing:3px}
-.logo span{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 8px var(--glow))}
-.logo-cr{font-size:1.2rem;filter:drop-shadow(0 0 10px var(--glow));animation:cr 3.5s ease-in-out infinite}
-@keyframes cr{50%{transform:translateY(-4px) rotate(2deg)}}
-.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-.nav-links a{position:relative;font-family:'Orbitron',sans-serif;color:#b7c0cc;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.5rem 0;transition:color .25s}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--grad-brand);box-shadow:0 0 12px var(--glow);transition:width .3s}
-.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-cta{padding:10px 20px!important;border:1px solid var(--blue);color:var(--blue)!important;border-radius:3px;transition:all .3s!important;position:relative;overflow:hidden}
-.nav-cta::before{content:'';position:absolute;inset:0;background:var(--grad-brand);transform:translateX(-100%);transition:transform .35s;z-index:-1}
-.nav-cta:hover::before{transform:translateX(0)}.nav-cta:hover{color:#000!important;box-shadow:0 0 30px var(--glow);transform:translateY(-2px)}
-.nav-cta::after{display:none!important}
-.menu-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);background:rgba(0,204,255,.05);color:var(--blue);border-radius:4px}
+    <meta
+        name="description"
+        content="K1NG Esports — competitive gaming, creators and the next generation of champions."
+    >
 
-/* HERO */
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:130px 5% 80px;
-  background:linear-gradient(180deg,rgba(2,3,6,.35),rgba(2,3,6,.85) 75%,var(--black)),url('ChatGPT_Image_Aug_12_2026_09_31_54_PM.png') center/cover no-repeat;isolation:isolate}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,transparent 20%,rgba(2,3,6,.7) 80%);z-index:-1}
-.particles{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.particle{position:absolute;bottom:-10px;width:3px;height:3px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--glow);opacity:0;animation:rise linear infinite}
-@keyframes rise{0%{transform:translateY(0);opacity:0}10%{opacity:.9}90%{opacity:.5}100%{transform:translateY(-110vh) translateX(var(--d,40px));opacity:0}}
-.hero-content{position:relative;z-index:2;max-width:1050px}
-.badge{display:inline-flex;align-items:center;gap:10px;padding:9px 18px;border:1px solid var(--line);background:rgba(0,204,255,.06);color:var(--blue);font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:32px;animation:fd .9s both;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
-.badge::before{content:'';width:7px;height:7px;background:var(--blue);border-radius:50%;box-shadow:0 0 14px var(--blue);animation:live 1.4s infinite}
-@keyframes live{50%{opacity:.25;transform:scale(.65)}}@keyframes fd{from{opacity:0;transform:translateY(-25px)}}
-.hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(4.5rem,16vw,12rem);line-height:.82;font-weight:900;letter-spacing:clamp(2px,1.2vw,14px)}
-.hero h1 .k{display:inline-block;background:var(--grad-silver);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 25px rgba(255,255,255,.15));animation:hi 1.1s cubic-bezier(.16,1,.3,1) both}
-.hero h1 .e{display:block;background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 30px var(--glow));animation:hi 1.1s cubic-bezier(.16,1,.3,1) .15s both}
-@keyframes hi{from{opacity:0;transform:translateY(50px) scale(.9)}}
-.slogan{margin-top:30px;font-family:'Orbitron',sans-serif;color:var(--blue);font-size:clamp(.75rem,2vw,1rem);font-weight:800;letter-spacing:7px;text-transform:uppercase;animation:fu 1s .35s both}
-.tw{margin-top:14px;color:#cbd5e1;font-size:clamp(.95rem,2.2vw,1.25rem);letter-spacing:1.5px;min-height:1.6em;animation:fu 1s .5s both}
-.tw .c{display:inline-block;width:2px;height:1.1em;background:var(--blue);margin-left:4px;vertical-align:-3px;animation:blink 1s infinite}
-@keyframes blink{50%{opacity:0}}@keyframes fu{from{opacity:0;transform:translateY(25px)}}
-.btns{display:flex;justify-content:center;gap:16px;margin-top:44px;flex-wrap:wrap;animation:fu 1s .7s both}
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:185px;padding:16px 30px;border-radius:3px;font-family:'Orbitron',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;transition:all .35s cubic-bezier(.22,1,.36,1);clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%)}
-.btn-pri{background:var(--grad-brand);color:#000;box-shadow:0 0 30px var(--glow)}
-.btn-pri::before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.55),transparent 75%);transform:translateX(-120%);transition:transform .7s}
-.btn-pri:hover::before{transform:translateX(120%)}.btn-pri:hover{transform:translateY(-5px) scale(1.02);filter:brightness(1.15)}
-.btn-out{border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.02);color:#fff}
-.btn-out:hover{border-color:var(--blue);background:rgba(0,204,255,.08);color:var(--blue);transform:translateY(-5px)}
-.scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#64748b;font-family:'Orbitron',sans-serif;font-size:.58rem;letter-spacing:4px;text-transform:uppercase;animation:fu 1s 1.1s both}
-.scroll::after{content:'';display:block;width:1px;height:40px;margin:12px auto 0;background:linear-gradient(var(--blue),transparent)}
-
-/* MARQUEE */
-.marquee{background:var(--grad-brand);padding:.9rem 0;overflow:hidden}
-.marquee-track{display:flex;gap:4.5rem;white-space:nowrap;animation:m 28s linear infinite;width:max-content}
-.marquee span{font-family:'Orbitron',sans-serif;font-weight:800;font-size:.85rem;color:#000;letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:1rem}
-@keyframes m{to{transform:translateX(-50%)}}
-
-/* SECTIONS */
-section{position:relative;width:min(var(--max-width),92%);margin:0 auto;padding:120px 0}
-.sh{text-align:center;margin-bottom:70px}
-.kicker{display:inline-block;font-family:'Orbitron',sans-serif;color:var(--blue);font-size:.65rem;font-weight:800;letter-spacing:4.5px;text-transform:uppercase;margin-bottom:14px;padding:0 1.5rem;position:relative}
-.kicker::before,.kicker::after{content:'';position:absolute;top:50%;width:1rem;height:1px;background:var(--grad-brand)}
-.kicker::before{left:0}.kicker::after{right:0}
-.st{font-family:'Orbitron',sans-serif;font-size:clamp(2rem,5.5vw,3.6rem);font-weight:900;letter-spacing:-1px;line-height:1.05}
-.st span{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 15px var(--glow))}
-.sd{max-width:660px;margin:20px auto 0;color:var(--muted);line-height:1.8;font-size:.98rem}
-.sh::after{content:'';display:block;width:70px;height:2px;margin:28px auto 0;background:var(--grad-brand);box-shadow:0 0 18px var(--glow)}
-.reveal{opacity:0;transform:translateY(50px);transition:opacity .9s ease,transform .9s cubic-bezier(.16,1,.3,1)}
-.reveal.v{opacity:1;transform:none}
-
-/* STATS */
-.stats{width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(0,204,255,.03),rgba(124,58,237,.03))}
-.si{width:min(var(--max-width),92%);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{text-align:center;padding:55px 20px;border-right:1px solid var(--line);transition:background .4s}
-.stat:last-child{border-right:none}.stat:hover{background:rgba(0,204,255,.04)}
-.sn{font-family:'Orbitron',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;line-height:1;display:inline-block;transition:transform .4s}
-.stat:hover .sn{transform:scale(1.1)}
-.sn span{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sl{margin-top:10px;font-family:'Orbitron',sans-serif;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
-
-/* QUICK LINKS */
-.ql{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.ql-card{position:relative;padding:40px 30px;background:var(--dark);border:1px solid var(--line);border-radius:4px;transition:all .45s cubic-bezier(.22,1,.36,1);cursor:pointer;overflow:hidden}
-.ql-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--grad-brand);transform:scaleX(0);transform-origin:left;transition:transform .5s}
-.ql-card:hover{transform:translateY(-10px);border-color:var(--blue);box-shadow:0 25px 60px rgba(0,0,0,.45),0 0 35px rgba(0,204,255,.12)}
-.ql-card:hover::before{transform:scaleX(1)}
-.ql-icon{font-size:2.5rem;margin-bottom:18px;filter:drop-shadow(0 0 10px var(--glow));transition:transform .4s}
-.ql-card:hover .ql-icon{transform:scale(1.15) rotate(-5deg)}
-.ql-card h3{font-family:'Orbitron',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:10px}
-.ql-card p{color:var(--muted);font-size:.88rem;line-height:1.7}
-.ql-arr{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:var(--blue);font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;transition:gap .3s}
-.ql-card:hover .ql-arr{gap:16px}
-
-/* CTA */
-.cta-box{position:relative;overflow:hidden;padding:80px 40px;text-align:center;border:1px solid var(--line);border-radius:4px;background:radial-gradient(circle at center,rgba(0,204,255,.15),transparent 65%),var(--dark)}
-.cta-box h2{font-family:'Orbitron',sans-serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:900;margin-bottom:16px}
-.cta-box h2 span{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
-.cta-box p{max-width:600px;margin:0 auto 32px;color:var(--muted);line-height:1.8}
-
-/* FOOTER */
-footer{background:#020305;border-top:1px solid var(--line);padding:60px 5% 30px;margin-top:60px}
-.ft{width:min(var(--max-width),92%);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px}
-.f-logo{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;letter-spacing:3px;margin-bottom:10px}
-.f-logo span{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
-.f-slog{color:var(--muted);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
-.f-about{color:var(--muted);font-size:.9rem;line-height:1.7;max-width:320px}
-.f-col h4{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
-.f-col a{display:block;padding:6px 0;color:var(--muted);font-size:.9rem;transition:all .2s}
-.f-col a:hover{color:#fff;padding-left:6px}
-.socials{display:flex;gap:10px;margin-top:22px}
-.soc{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--muted);font-size:.75rem;font-weight:800;transition:all .3s}
-.soc:hover{color:#000;background:var(--grad-brand);border-color:transparent;transform:translateY(-3px);box-shadow:0 0 20px var(--glow)}
-.fb{width:min(var(--max-width),92%);margin:0 auto;padding-top:25px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:#505967;font-size:.65rem;letter-spacing:1.5px;text-transform:uppercase}
-.fb .sl{font-family:'Orbitron',sans-serif;color:var(--blue);letter-spacing:3px}
-
-/* RESPONSIVE */
-@media(max-width:1000px){.nav-links{gap:1.2rem}.ql{grid-template-columns:repeat(2,1fr)}.ft{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){
-  .menu-toggle{display:block}
-  .nav-links{position:fixed;top:64px;left:0;width:100%;height:calc(100vh - 64px);padding:50px 30px;flex-direction:column;gap:30px;background:rgba(2,3,6,.98);backdrop-filter:blur(20px);transform:translateX(100%);transition:transform .4s ease}
-  .nav-links.open{transform:translateX(0)}
-  .si{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:none}.stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
-  .ql{grid-template-columns:1fr}.ft{grid-template-columns:1fr;text-align:center}.socials{justify-content:center}.fb{flex-direction:column;text-align:center}
-}
-@media(max-width:480px){.btns{flex-direction:column;width:100%}.btn{width:100%}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="bg-grid"></div><div class="ambient a1"></div><div class="ambient a2"></div>
+<header class="navbar">
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="index.html" class="logo"><span class="logo-cr">♛</span> K<span>1</span>NG</a>
-  <button class="menu-toggle" id="mt">☰</button>
-  <ul class="nav-links" id="nl">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="teams.html">Teams</a></li>
-    <li><a href="achievements.html">Achievements</a></li>
-    <li><a href="partners.html">Partners</a></li>
-    <li><a href="contact.html" class="nav-cta">Join K1NG</a></li>
-  </ul>
-</nav>
+    <a href="index.html" class="logo">
+        ♛
+        <span>K1NG</span>
+        <small>ESPORTS</small>
+    </a>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="particles" id="p"></div>
-  <div class="hero-content">
-    <div class="badge">EST. 2026 · OFFICIAL SITE</div>
-    <h1><span class="k">K<span style="background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent">1</span>NG</span> <span class="e">ESPORTS</span></h1>
-    <p class="slogan">ONE NAME. ONE CROWN.</p>
-    <p class="tw" id="tw"></p>
-    <div class="btns">
-      <a href="teams.html" class="btn btn-pri">VIEW ROSTER →</a>
-      <a href="about.html" class="btn btn-out">ABOUT THE ORG</a>
-    </div>
-  </div>
-  <div class="scroll">SCROLL</div>
+    <button class="menu-button" id="menuButton">
+        ☰
+    </button>
+
+    <nav id="navigation">
+
+        <a class="active" href="index.html">
+            Home
+        </a>
+
+        <a href="pages/roster.html">
+            Roster
+        </a>
+
+        <a href="pages/teams.html">
+            Teams
+        </a>
+
+        <a href="pages/news.html">
+            News
+        </a>
+
+        <a href="pages/tournaments.html">
+            Tournaments
+        </a>
+
+        <a href="pages/media.html">
+            Media
+        </a>
+
+        <a class="join-button" href="pages/join.html">
+            JOIN K1NG
+        </a>
+
+    </nav>
+
 </header>
 
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span>👑 K1NG ESPORTS</span><span>✦</span><span>OWNED BY TAZZ & AJ</span><span>✦</span><span>COMPETE · BUILD · REIGN</span><span>✦</span><span>MOD APPS OPEN</span><span>✦</span>
-    <span>👑 K1NG ESPORTS</span><span>✦</span><span>OWNED BY TAZZ & AJ</span><span>✦</span><span>COMPETE · BUILD · REIGN</span><span>✦</span><span>MOD APPS OPEN</span><span>✦</span>
-  </div>
-</div>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="si">
-    <div class="stat reveal"><div class="sn" data-c="3">0<span>+</span></div><div class="sl">Competitive Teams</div></div>
-    <div class="stat reveal"><div class="sn" data-c="12">0<span>+</span></div><div class="sl">Pro Players</div></div>
-    <div class="stat reveal"><div class="sn" data-c="25">0<span>+</span></div><div class="sl">Matches Played</div></div>
-    <div class="stat reveal"><div class="sn">100<span>%</span></div><div class="sl">Dedication</div></div>
-  </div>
-</div>
+<main>
 
-<!-- QUICK LINKS -->
-<section>
-  <div class="sh reveal">
-    <div class="kicker">EXPLORE</div>
-    <h2 class="st">The World of <span>K1NG</span></h2>
-    <p class="sd">Dive deeper into the organisation, the players and the journey.</p>
-  </div>
-  <div class="ql">
-    <a href="about.html" class="ql-card reveal">
-      <div class="ql-icon">👑</div>
-      <h3>About K1NG</h3>
-      <p>Our story, mission and the philosophy behind the crown.</p>
-      <div class="ql-arr">LEARN MORE →</div>
-    </a>
-    <a href="teams.html" class="ql-card reveal">
-      <div class="ql-icon">⚔️</div>
-      <h3>Teams & Roster</h3>
-      <p>Meet the elite players representing K1NG across every title.</p>
-      <div class="ql-arr">MEET THEM →</div>
-    </a>
-    <a href="achievements.html" class="ql-card reveal">
-      <div class="ql-icon">🏆</div>
-      <h3>Achievements</h3>
-      <p>Every trophy, milestone and step toward the ultimate crown.</p>
-      <div class="ql-arr">VIEW RESULTS →</div>
-    </a>
-  </div>
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            EST. 2026 • COMPETITIVE GAMING
+        </span>
+
+        <h1>
+            ONE NAME.
+            <br>
+            <span>ONE CROWN.</span>
+        </h1>
+
+        <p>
+            K1NG Esports is built for competitors, creators
+            and the next generation of champions.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="button" href="pages/roster.html">
+                MEET THE ROSTER →
+            </a>
+
+            <a class="button secondary" href="pages/join.html">
+                JOIN K1NG
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-crown">
+        ♛
+    </div>
+
 </section>
+
+
+<!-- TICKER -->
+
+<div class="ticker">
+
+    <span>WIN</span>
+    <span>◆</span>
+    <span>COMPETE</span>
+    <span>◆</span>
+    <span>CONQUER</span>
+    <span>◆</span>
+    <span>K1NG ESPORTS</span>
+    <span>◆</span>
+    <span>WIN</span>
+
+</div>
+
+
+<!-- K1NG STANDARD -->
+
+<section class="section">
+
+    <span class="eyebrow">
+        THE K1NG STANDARD
+    </span>
+
+    <h2>
+        BUILT FOR
+        <span>GREATNESS.</span>
+    </h2>
+
+
+    <div class="cards">
+
+        <article class="card">
+
+            <div class="card-icon">
+                ♛
+            </div>
+
+            <h3>
+                ELITE TALENT
+            </h3>
+
+            <p>
+                Players with the mechanics, discipline
+                and mindset to compete.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                ⚡
+            </div>
+
+            <h3>
+                BUILT TO WIN
+            </h3>
+
+            <p>
+                Every detail is designed around
+                performance and progression.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                ◆
+            </div>
+
+            <h3>
+                NEXT GENERATION
+            </h3>
+
+            <p>
+                A platform for ambitious players
+                and creators to rise.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PLAYER -->
+
+<section class="featured-player">
+
+    <div class="featured-info">
+
+        <span class="eyebrow">
+            FEATURED PLAYER
+        </span>
+
+        <h2>
+            K1NG
+            <span>T4ZZ</span>
+        </h2>
+
+        <strong>
+            CAPTAIN • COMPETITIVE PLAYER
+        </strong>
+
+        <p>
+            Leading from the front.
+            Confidence, consistency and a relentless
+            winning mentality.
+        </p>
+
+        <a class="button" href="pages/player.html">
+            VIEW PROFILE →
+        </a>
+
+    </div>
+
+
+    <div class="player-placeholder">
+
+        <span>♛</span>
+
+        <strong>
+            T4ZZ
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- LATEST NEWS -->
+
+<section class="section dark">
+
+    <span class="eyebrow">
+        LATEST
+    </span>
+
+    <h2>
+        FROM THE
+        <span>CROWN ROOM.</span>
+    </h2>
+
+
+    <div class="cards">
+
+        <article class="news-card">
+
+            <span>
+                18 AUG 2026
+            </span>
+
+            <h3>
+                A NEW COMPETITIVE ERA
+            </h3>
+
+            <p>
+                The next chapter starts now.
+            </p>
+
+            <a href="pages/news.html">
+                READ STORY →
+            </a>
+
+        </article>
+
+
+        <article class="news-card">
+
+            <span>
+                15 AUG 2026
+            </span>
+
+            <h3>
+                MEET THE ROSTER
+            </h3>
+
+            <p>
+                Talent, ambition and one shared goal.
+            </p>
+
+            <a href="pages/roster.html">
+                MEET THE TEAM →
+            </a>
+
+        </article>
+
+
+        <article class="news-card">
+
+            <span>
+                10 AUG 2026
+            </span>
+
+            <h3>
+                APPLICATIONS OPEN
+            </h3>
+
+            <p>
+                Think you have what it takes?
+            </p>
+
+            <a href="pages/join.html">
+                APPLY NOW →
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
 
 <!-- CTA -->
-<section>
-  <div class="cta-box reveal">
-    <h2>Ready To Wear The <span>Crown?</span></h2>
-    <p>Think you have what it takes to join K1NG ESPORTS as a player, mod or partner? Get in touch today.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a href="contact.html" class="btn btn-pri">APPLY NOW →</a>
-      <a href="partners.html" class="btn btn-out">PARTNER WITH US</a>
-    </div>
-  </div>
+
+<section class="cta">
+
+    <span class="eyebrow">
+        YOUR TIME IS NOW
+    </span>
+
+    <h2>
+        READY TO WEAR THE
+        <span>CROWN?</span>
+    </h2>
+
+    <a class="button" href="pages/join.html">
+        APPLY TO K1NG
+    </a>
+
 </section>
 
+</main>
+
+
 <!-- FOOTER -->
+
 <footer>
-  <div class="ft">
-    <div>
-      <div class="f-logo">♛ K<span>1</span>NG ESPORTS</div>
-      <div class="f-slog">ONE NAME. ONE CROWN.</div>
-      <p class="f-about">Elite competitive esports organisation founded by Tazz & Aj. Built to dominate. Built to last.</p>
-      <div class="socials">
-        <a href="#" class="soc">X</a><a href="#" class="soc">IG</a><a href="#" class="soc">DC</a><a href="#" class="soc">TT</a>
-      </div>
+
+    <a href="index.html" class="logo">
+        ♛
+        <span>K1NG</span>
+        <small>ESPORTS</small>
+    </a>
+
+    <p>
+        ONE NAME. ONE CROWN.
+    </p>
+
+    <div class="socials">
+
+        <a href="#">
+            Discord
+        </a>
+
+        <a href="#">
+            TikTok
+        </a>
+
+        <a href="#">
+            YouTube
+        </a>
+
     </div>
-    <div class="f-col"><h4>Organisation</h4><a href="about.html">About</a><a href="teams.html">Teams</a><a href="achievements.html">Achievements</a></div>
-    <div class="f-col"><h4>Community</h4><a href="contact.html">Join Us</a><a href="#">Discord</a><a href="#">Rules</a></div>
-    <div class="f-col"><h4>Business</h4><a href="partners.html">Partners</a><a href="contact.html">Sponsorships</a><a href="contact.html">Press</a></div>
-  </div>
-  <div class="fb"><span>© 2026 K1NG ESPORTS · ALL RIGHTS RESERVED</span><span class="sl">ONE NAME · ONE CROWN</span></div>
+
+    <small>
+        © 2026 K1NG Esports. All rights reserved.
+    </small>
+
 </footer>
 
-<script>
-// NAV
-const n=document.getElementById('nav'),mt=document.getElementById('mt'),nl=document.getElementById('nl');
-window.addEventListener('scroll',()=>n.classList.toggle('scrolled',window.scrollY>60));
-mt.addEventListener('click',()=>{nl.classList.toggle('open');mt.textContent=nl.classList.contains('open')?'✕':'☰';document.body.classList.toggle('menu-open',nl.classList.contains('open'))});
-nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mt.textContent='☰';document.body.classList.remove('menu-open')}));
 
-// PARTICLES
-const pf=document.getElementById('p');for(let i=0;i<40;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.setProperty('--d',(Math.random()*80-40)+'px');const d=7+Math.random()*9;p.style.animationDuration=d+'s';p.style.animationDelay=Math.random()*d+'s';p.style.width=p.style.height=(2+Math.random()*3)+'px';pf.appendChild(p)}
+<script src="js/main.js"></script>
 
-// TYPEWRITER
-const ph=['One Name. One Crown. We Are K1NG.','Owned by Tazz & Aj · Est. 2026','Competitive Excellence · Community First','Mod Applications Are Now Open 👀'];let pi=0,ci=0,del=false;const tw=document.getElementById('tw');
-function t(){const c=ph[pi];tw.innerHTML=(del?c.slice(0,--ci):c.slice(0,++ci
-
+</body>
+</html>
