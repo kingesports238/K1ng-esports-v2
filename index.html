@@ -1,63 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>K1NG Esports | One Name. One Crown.</title>
 
-    <meta
-        name="description"
-        content="K1NG Esports — competitive gaming, creators and the next generation of champions."
-    >
+    <meta name="description"
+          content="K1NG Esports — competitive gaming, creators, teams and the next generation of champions.">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <header class="navbar">
 
-    <a href="index.html" class="logo">
-        ♛
-        <span>K1NG</span>
-        <small>ESPORTS</small>
+    <a href="index.html" class="brand">
+        <div class="brand-crown">♛</div>
+
+        <div>
+            <strong>K1NG</strong>
+            <span>ESPORTS</span>
+        </div>
     </a>
 
-    <button class="menu-button" id="menuButton">
-        ☰
+    <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
 
-    <nav id="navigation">
+    <nav id="mainNav">
 
-        <a class="active" href="index.html">
-            Home
-        </a>
-
-        <a href="pages/roster.html">
-            Roster
-        </a>
-
-        <a href="pages/teams.html">
-            Teams
-        </a>
-
-        <a href="pages/news.html">
-            News
-        </a>
-
-        <a href="pages/tournaments.html">
-            Tournaments
-        </a>
-
-        <a href="pages/media.html">
-            Media
-        </a>
-
-        <a class="join-button" href="pages/join.html">
-            JOIN K1NG
-        </a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="teams.html">Teams</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html" class="nav-cta">Join K1NG</a>
 
     </nav>
 
@@ -66,20 +49,23 @@
 
 <main>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-grid"></div>
 
-        <span class="eyebrow">
-            EST. 2026 • COMPETITIVE GAMING
-        </span>
+    <div class="hero-content reveal">
+
+        <div class="hero-tag">
+            <span></span>
+            EST. 2026 • COMPETITIVE ESPORTS
+        </div>
 
         <h1>
             ONE NAME.
             <br>
-            <span>ONE CROWN.</span>
+            <em>ONE CROWN.</em>
         </h1>
 
         <p>
@@ -89,11 +75,12 @@
 
         <div class="hero-buttons">
 
-            <a class="button" href="pages/roster.html">
-                MEET THE ROSTER →
+            <a href="teams.html" class="btn btn-primary">
+                EXPLORE TEAMS
+                <span>→</span>
             </a>
 
-            <a class="button secondary" href="pages/join.html">
+            <a href="contact.html" class="btn btn-outline">
                 JOIN K1NG
             </a>
 
@@ -101,49 +88,70 @@
 
     </div>
 
-    <div class="hero-crown">
+    <div class="hero-symbol">
         ♛
+    </div>
+
+    <div class="scroll-indicator">
+        <span></span>
+        SCROLL TO EXPLORE
     </div>
 
 </section>
 
 
-<!-- TICKER -->
+<!-- ================= TICKER ================= -->
 
-<div class="ticker">
+<section class="ticker">
 
-    <span>WIN</span>
-    <span>◆</span>
-    <span>COMPETE</span>
-    <span>◆</span>
-    <span>CONQUER</span>
-    <span>◆</span>
-    <span>K1NG ESPORTS</span>
-    <span>◆</span>
-    <span>WIN</span>
+    <div>
+        K1NG ESPORTS
+        <b>◆</b>
+        COMPETE
+        <b>◆</b>
+        CONQUER
+        <b>◆</b>
+        WIN
+        <b>◆</b>
+        K1NG ESPORTS
+        <b>◆</b>
+        COMPETE
+        <b>◆</b>
+        CONQUER
+        <b>◆</b>
+        WIN
+    </div>
 
-</div>
-
-
-<!-- K1NG STANDARD -->
-
-<section class="section">
-
-    <span class="eyebrow">
-        THE K1NG STANDARD
-    </span>
-
-    <h2>
-        BUILT FOR
-        <span>GREATNESS.</span>
-    </h2>
+</section>
 
 
-    <div class="cards">
+<!-- ================= INTRO ================= -->
 
-        <article class="card">
+<section class="section intro">
 
-            <div class="card-icon">
+    <div class="section-heading reveal">
+
+        <span class="eyebrow">
+            THE K1NG STANDARD
+        </span>
+
+        <h2>
+            BUILT FOR
+            <strong>GREATNESS.</strong>
+        </h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <article class="feature-card reveal">
+
+            <div class="feature-number">
+                01
+            </div>
+
+            <div class="feature-icon">
                 ♛
             </div>
 
@@ -152,16 +160,20 @@
             </h3>
 
             <p>
-                Players with the mechanics, discipline
-                and mindset to compete.
+                We bring together ambitious players who
+                want to compete at the highest level.
             </p>
 
         </article>
 
 
-        <article class="card">
+        <article class="feature-card reveal">
 
-            <div class="card-icon">
+            <div class="feature-number">
+                02
+            </div>
+
+            <div class="feature-icon">
                 ⚡
             </div>
 
@@ -170,16 +182,20 @@
             </h3>
 
             <p>
-                Every detail is designed around
-                performance and progression.
+                Every decision is focused on improvement,
+                performance and creating champions.
             </p>
 
         </article>
 
 
-        <article class="card">
+        <article class="feature-card reveal">
 
-            <div class="card-icon">
+            <div class="feature-number">
+                03
+            </div>
+
+            <div class="feature-icon">
                 ◆
             </div>
 
@@ -188,8 +204,8 @@
             </h3>
 
             <p>
-                A platform for ambitious players
-                and creators to rise.
+                K1NG gives upcoming talent a platform
+                to develop, compete and be recognised.
             </p>
 
         </article>
@@ -199,124 +215,186 @@
 </section>
 
 
-<!-- FEATURED PLAYER -->
+<!-- ================= FEATURED PLAYER ================= -->
 
-<section class="featured-player">
+<section class="featured">
 
-    <div class="featured-info">
+    <div class="featured-image reveal">
+
+        <div class="featured-crown">
+            ♛
+        </div>
+
+        <div class="featured-name">
+            T4ZZ
+        </div>
+
+    </div>
+
+
+    <div class="featured-content reveal">
 
         <span class="eyebrow">
-            FEATURED PLAYER
+            FEATURED
         </span>
 
         <h2>
             K1NG
-            <span>T4ZZ</span>
+            <strong>T4ZZ</strong>
         </h2>
 
-        <strong>
+        <span class="role">
             CAPTAIN • COMPETITIVE PLAYER
-        </strong>
+        </span>
 
         <p>
-            Leading from the front.
-            Confidence, consistency and a relentless
-            winning mentality.
+            Leading from the front. Confidence,
+            consistency and a relentless winning mentality.
         </p>
 
-        <a class="button" href="pages/player.html">
-            VIEW PROFILE →
+        <div class="player-stats">
+
+            <div>
+                <strong>01</strong>
+                <span>ROLE</span>
+            </div>
+
+            <div>
+                <strong>2026</strong>
+                <span>JOINED</span>
+            </div>
+
+            <div>
+                <strong>∞</strong>
+                <span>DRIVE</span>
+            </div>
+
+        </div>
+
+        <a href="teams.html" class="text-link">
+            VIEW THE ROSTER →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NUMBERS ================= -->
+
+<section class="numbers">
+
+    <div class="number-item reveal">
+        <strong data-count="2026">0</strong>
+        <span>ESTABLISHED</span>
+    </div>
+
+    <div class="number-item reveal">
+        <strong data-count="6">0</strong>
+        <span>ROSTER MEMBERS</span>
+    </div>
+
+    <div class="number-item reveal">
+        <strong data-count="3">0</strong>
+        <span>DIVISIONS</span>
+    </div>
+
+    <div class="number-item reveal">
+        <strong data-count="100">0</strong>
+        <span>COMMITMENT %</span>
+    </div>
+
+</section>
+
+
+<!-- ================= LATEST ================= -->
+
+<section class="section latest">
+
+    <div class="section-top">
+
+        <div>
+            <span class="eyebrow">
+                LATEST
+            </span>
+
+            <h2>
+                FROM THE
+                <strong>CROWN ROOM.</strong>
+            </h2>
+        </div>
+
+        <a href="achievements.html" class="text-link">
+            VIEW ALL →
         </a>
 
     </div>
 
 
-    <div class="player-placeholder">
+    <div class="news-grid">
 
-        <span>♛</span>
+        <article class="news-card reveal">
 
-        <strong>
-            T4ZZ
-        </strong>
-
-    </div>
-
-</section>
-
-
-<!-- LATEST NEWS -->
-
-<section class="section dark">
-
-    <span class="eyebrow">
-        LATEST
-    </span>
-
-    <h2>
-        FROM THE
-        <span>CROWN ROOM.</span>
-    </h2>
-
-
-    <div class="cards">
-
-        <article class="news-card">
-
-            <span>
-                18 AUG 2026
-            </span>
+            <div class="news-date">
+                AUG 18, 2026
+            </div>
 
             <h3>
                 A NEW COMPETITIVE ERA
+                BEGINS
             </h3>
 
             <p>
-                The next chapter starts now.
+                K1NG Esports enters a new chapter with
+                competitive gaming at the heart of the organisation.
             </p>
 
-            <a href="pages/news.html">
-                READ STORY →
+            <a href="about.html">
+                READ MORE →
             </a>
 
         </article>
 
 
-        <article class="news-card">
+        <article class="news-card reveal">
 
-            <span>
-                15 AUG 2026
-            </span>
+            <div class="news-date">
+                AUG 15, 2026
+            </div>
 
             <h3>
-                MEET THE ROSTER
+                MEET THE
+                K1NG ROSTER
             </h3>
 
             <p>
-                Talent, ambition and one shared goal.
+                Talent, ambition and one shared goal:
+                becoming champions.
             </p>
 
-            <a href="pages/roster.html">
+            <a href="teams.html">
                 MEET THE TEAM →
             </a>
 
         </article>
 
 
-        <article class="news-card">
+        <article class="news-card reveal">
 
-            <span>
-                10 AUG 2026
-            </span>
+            <div class="news-date">
+                AUG 10, 2026
+            </div>
 
             <h3>
-                APPLICATIONS OPEN
+                K1NG APPLICATIONS
+                OPEN
             </h3>
 
             <p>
-                Think you have what it takes?
+                Think you have what it takes to wear the crown?
             </p>
 
-            <a href="pages/join.html">
+            <a href="contact.html">
                 APPLY NOW →
             </a>
 
@@ -327,21 +405,26 @@
 </section>
 
 
-<!-- CTA -->
+<!-- ================= CTA ================= -->
 
-<section class="cta">
+<section class="big-cta">
+
+    <div class="cta-crown">
+        ♛
+    </div>
 
     <span class="eyebrow">
         YOUR TIME IS NOW
     </span>
 
     <h2>
-        READY TO WEAR THE
-        <span>CROWN?</span>
+        READY TO WEAR
+        <strong>THE CROWN?</strong>
     </h2>
 
-    <a class="button" href="pages/join.html">
-        APPLY TO K1NG
+    <a href="contact.html" class="btn btn-primary">
+        JOIN K1NG
+        <span>→</span>
     </a>
 
 </section>
@@ -349,39 +432,57 @@
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <a href="index.html" class="logo">
-        ♛
-        <span>K1NG</span>
-        <small>ESPORTS</small>
-    </a>
+    <div class="footer-top">
 
-    <p>
-        ONE NAME. ONE CROWN.
-    </p>
+        <a href="index.html" class="brand">
 
-    <div class="socials">
+            <div class="brand-crown">♛</div>
 
-        <a href="#">
-            Discord
+            <div>
+                <strong>K1NG</strong>
+                <span>ESPORTS</span>
+            </div>
+
         </a>
 
-        <a href="#">
-            TikTok
-        </a>
 
-        <a href="#">
-            YouTube
-        </a>
+        <div class="footer-links">
+
+            <a href="about.html">About</a>
+            <a href="teams.html">Teams</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="partners.html">Partners</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="social-links">
+
+            <a href="#" aria-label="Discord">DS</a>
+            <a href="#" aria-label="TikTok">TK</a>
+            <a href="#" aria-label="YouTube">YT</a>
+
+        </div>
 
     </div>
 
-    <small>
-        © 2026 K1NG Esports. All rights reserved.
-    </small>
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 K1NG ESPORTS. ALL RIGHTS RESERVED.
+        </span>
+
+        <span>
+            ONE NAME. ONE CROWN.
+        </span>
+
+    </div>
 
 </footer>
 
